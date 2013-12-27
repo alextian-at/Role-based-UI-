@@ -1,0 +1,47 @@
+﻿<div accela-modal="standardComment" ng-controller="StandardCommentsCtrl">
+    <form id="standardCommentFrm">
+        <div class="row standard-comment-header">
+            <div class="col-lg-4">
+                <select name="standardCommentGroups" id="standardCommentGroups" class="form-control" ng-change="getStandardComments()" ng-model="standardCommentGroups.value">
+                    <option value="" ng-bind="Language.Label.Comments_ShowAll"></option>
+                    <option ng-repeat="group in standardCommentGroups" value="{{group.id}}">{{group.display}}</option>
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" ng-model="searchText" placeholder="{{Language.Label.Comments_Search_By_Keyword}}" />
+            </div>
+        </div>
+        <div class="panel panel-default comment-pannel">
+            <ul class="list-group standard-comment-list">
+                <li ng-repeat='item in standardCommentsList | filter:searchText' ng-click="addCommentToInsertList(item)" onclick="toggleIconClass(this)" class="list-group-item-text cursor-pointer">
+                    <div class="col-md-2 display-ellipsis ">{{item.display}}</div><div class="display-ellipsis col-md-9">{{ item.comments }}</div><div class="col-md-1"><i class="glyphicon glyphicon-plus-sign"></i></div>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="standard-comment-tips">
+                    Tip: Edit any comment by typing below
+                </div>
+            </div>
+        </div>
+        <textarea class="form-control standard-comment-content" rows="5" ng-model="standardComments"></textarea>
+        <div class="row">
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <div class="float-right">
+            <button class="btn btn-link" ng-click="clearAll()" ng-bind="Language.Label.Comments_ClearAll"></button>
+            <button type="button" class="btn btn-primary" id="save" ng-click="ClickClose();" ng-bind="Language.Label.Comments_Save_Close"></button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function toggleIconClass(obj) {
+        $(obj).find("i").removeClass("glyphicon-plus-sign").addClass("glyphicon-minus-sign");
+    }
+
+</script>

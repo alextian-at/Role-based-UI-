@@ -1,0 +1,50 @@
+﻿<div accela-modal="createNew">
+    <form role="form" name="createInspectionFrm" class="form-horizontal">
+        <div class="form-group row" ng-class="{'has-error':createInspectionFrm.PermitID.$invalid}">
+            <div class="col-lg-1"></div>
+            <label class="col-lg-2 control-label radio">
+                <input type="radio" name="PermitID" checked="checked" />{{Language.Label.CreateNew_Current_Permit}}
+            </label>
+            <div class="col-lg-5">
+                <input type="text" class="form-control" name="PermitID" required ng-model="inspection.recordId.customId" placeholder="New Residential" />
+            </div>
+            <div class="col-lg-4">
+                <input type="button" value="Look up Permit ID" ng-click="LookUpPermitID();" class="btn btn-info" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-1"></div>
+            <label class="col-lg-2 control-label radio">
+                <input type="radio" name="PermitID" />{{Language.Label.CreateNew_New_Permit}}
+            </label>
+            <div class="col-lg-9">
+                <span class="control-label">{{Language.Label.CreateNew_Permit_Type}}</span>
+            </div>
+            <div class="col-lg-8">
+                <div class="input-group">
+                    <input type="text" class="form-control input-clear" name="permitType" ng-model="inspection.permitType" typeahead="permitType for permitType in permitTypes | filter:$viewValue | limitTo:8" placeholder="{{Language.Label.CreateNew_New_Residential}}" />
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="item in permitTypeList"><a href="javascript:void(0);" ng-click="changePermitType(item.display)">{{item.display}}</a></li>
+                    </ul>
+                    <span class="input-group-addon cursor-pointer dropdown-toggle"><i class="glyphicon glyphicon-search"></i></span>
+                </div>
+            </div>
+        </div>
+        <hr title="splite" />
+        <div class="form-group row" ng-class="{'has-error':createInspectionFrm.inspectionType.$invalid}">
+            <label class="col-lg-3 control-label" ng-bind="Language.Label.CreateNew_Inspection_Type"></label>
+            <div class="col-lg-5">
+                <select name="inspectionType" class="form-control" ng-model="inspection.type.text" required>
+                    <option value="">{{Language.Label.CreateNew_Inspection_Type_select}}</option>
+                    <option ng-repeat="item in typeList" data-parent="{{item.group}}" value="{{item.value}}">{{item.text}}</option>
+                </select>
+            </div>
+        </div>
+        <div ng-include src="'/AppViews/Inspector/InspectionCommonForm.html'"></div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-bind="Language.Label.CreateNew_Cancel"></button>
+        <button type="button" class="btn btn-primary" ng-click="save();" ng-disabled="createInspectionFrm.$invalid" ng-bind="Language.Label.CreateNew_Save_Inspection"></button>
+    </div>
+</div>
+<script src="../../Scripts/CommonJs/Clear/bootstrap.input-clear.js"></script>

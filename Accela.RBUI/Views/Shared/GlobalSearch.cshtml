@@ -1,0 +1,33 @@
+﻿@using Accela.RBUI.CommonLib;
+@{
+    string CurrentLang = string.Empty;
+    //arabic
+    if (Session["CurrentLang"] != null)
+    {
+        CurrentLang = Session["CurrentLang"].ToString();
+    }
+    else
+    {
+        CurrentLang = "en-US";
+    } 
+}
+
+<form class="navbar-form navbar-right" role="search">
+    <div class="form-group search-group">
+        <input type="text" class="form-control search-query"  placeholder="@XmlResourceManager.GetResourceString("Label/GlobalSearch_Placeholder", CurrentLang)">
+        <div class="btn-group search-condition">
+            <button class="btn btn-condition dropdown-toggle" data-toggle="dropdown"><span ng-bind="Language.Label.GlobalSearch_Permits"></span><i class="glyphicon glyphicon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+                <li><a href="javascript:;" class="cursor-default"><span ng-bind="Language.Label.GlobalSearch_Permits"></span></a></li>
+                <li><a href="javascript:;" class="cursor-default"><span ng-bind="Language.Label.GlobalSearch_Location"></span></a></li>
+                <li><a href="javascript:;" class="cursor-default"><span ng-bind="Language.Label.GlobalSearch_People"></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default btn-search">
+        <i class="glyphicon glyphicon-search"></i>
+    </button>
+    <div class="form-group">
+        <label ng-bind="Language.Label.GlobalSearch_Advanced_Search"></label>
+    </div>
+</form>

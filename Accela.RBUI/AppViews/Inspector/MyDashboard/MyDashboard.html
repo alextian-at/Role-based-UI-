@@ -1,0 +1,103 @@
+﻿<link rel="stylesheet" type="text/css" href="/Content/ScrollBar/jquery.jscrollpane.css" />
+<link rel="stylesheet" type="text/css" href="/Content/app/mydashboard.css" />
+<script type="text/javascript" src="/Scripts/CommonJs/ScrollBar/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="/Scripts/CommonJs/ScrollBar/jquery.jscrollpane.min.js"></script>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget">
+            <div class="widget-header">
+                <div class="widget-header" id="viewBtn">
+                    <span ng-show="totalRows">
+                        <h3>{{Language.Label.MyDashboard_TasksText}} <span class="num"><span ng-bind="totalRows"></span></span></h3>
+                    </span>
+                    <div class="buttons">
+                        <div class="icon"><i class="fa fa-question circle"></i></div>
+                        <div class="icon"><i class="glyphicon glyphicon-cog circle"></i></div>
+                    </div>
+                    <div class="line">&nbsp;</div>
+                    <div class="buttons">
+                        <div class="icon"><i title="Map" id="map" ng-click="taskincludeurl='/AppViews/Inspector/MyDashboard/MapList.html';DashboardLoadMap();" class="glyphicon glyphicon-picture active"></i></div>
+                        <div class="icon"><i title="Grid" id="grid" ng-click="taskincludeurl='/AppViews/Inspector/MyDashboard/GridList.html';" class="glyphicon glyphicon-th-large"></i></div>
+                        <div class="icon"><i title="Table" id="table" ng-click="taskincludeurl='/AppViews/Inspector/MyDashboard/TableList.html';" class="glyphicon glyphicon-th-list"></i></div>
+                    </div>
+                    <div class="line">&nbsp;</div>
+                    <div class="buttons">
+                        <div class="link"><span ng-bind="Language.Label.MyDashboard_SortBy"></span>&nbsp;&nbsp;<a href="javascript:void(0);" id="aDate" class="active" ng-click="Filed='-scheduleDate';rev=!rev;"><span ng-bind="Language.Label.MyDashboard_DateText"></span></a> • <a href="javascript:void(0);" id="aPriority" ng-click="Filed='-scheduleDate';rev=!rev;"><span ng-bind="Language.Label.MyDashboard_PriorityText"></span></a> • <a href="javascript:void(0);" id="aType" ng-click="Filed='type';rev=!rev;"><span ng-bind="Language.Label.MyDashboard_TypeText"></span></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-content" style="padding-bottom:0px;">
+                <div ng-include src="taskincludeurl"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget">
+                    <div class="widget-header">
+                                <h4 title="Language.Label.MyDashboard_RecentlyViewedText" ng-bind="Language.Label.MyDashboard_RecentlyViewedText"></h4>
+                            <div class="float-right">
+                                <div class="buttons">
+                                    <div class="icon"><i class="fa fa-question circle"></i></div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="widget-content">
+                        <div ng-include src="'/AppViews/Inspector/MyDashboard/RecentlyViewed.html'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget">
+                    <div class="widget-header">
+                        <h4 title="Language.Label.MyDashboard_BulletinBoardText" ng-bind="Language.Label.MyDashboard_BulletinBoardText"></h4>
+                        <div class="float-right">
+                            <div class="buttons">
+                                <div class="icon"><i class="fa fa-question circle"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-content content-padding">
+                        <div ng-include src="'/AppViews/Inspector/MyDashboard/BulletinBoard.html'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="display-none">
+    <input type="button" ng-click="$broadcast('Research');" id="hidBtnSearch" />
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#viewBtn i").click(function () {
+            $("#viewBtn i").not($(this)).removeClass("active");
+            $(this).addClass("active");
+        });
+
+
+
+        $("#viewBtn a").click(function () {
+            $("#viewBtn a").not($(this)).removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+
+
+    var api;
+    function Scrollbottom(objid) {
+        if (api) {
+            if (api.getPercentScrolledY() == 1) {
+                document.getElementById("hidBtnSearch").click();
+            }
+        }
+    }
+</script>

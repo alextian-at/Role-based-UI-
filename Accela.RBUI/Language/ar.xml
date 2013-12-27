@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LangOption>
+  <MessageBox>
+    <LoginUserMsg_Cn>فشل تسجيل الدخول</LoginUserMsg_Cn>
+    <ActionMsg_SaveChanges>حفظ التغييرات</ActionMsg_SaveChanges>
+    <ActionMsg_Cancel>إلغاء</ActionMsg_Cancel>
+    <ActionMsg_Edit>تحرير</ActionMsg_Edit>
+    <ActionMsg_Save>حفظ</ActionMsg_Save>
+  </MessageBox>
+  <Label>
+    <Login>تسجيل الدخول</Login>
+    <Login_Welcome>أهلا وسهلا! الرجاء تسجيل الدخول للبدء.</Login_Welcome>
+    <LoginUser>مسجله في</LoginUser>
+    <Logout>تسجيل الخروج</Logout>
+    <Header_Brand>مدينة بريدجيفيو</Header_Brand>
+    <Header_Hello>مرحبا</Header_Hello>
+    <CreateMenu>خلق فرص عمل جديدة</CreateMenu>
+    <CreateMenu_Permit>تصريح</CreateMenu_Permit>
+    <CreateMenu_Inspection>تفتيش</CreateMenu_Inspection>
+    <GlobalSearch_Placeholder>أدخل مصطلح البحث...</GlobalSearch_Placeholder>
+    <GlobalSearch_Permits>تصاريح</GlobalSearch_Permits>
+    <GlobalSearch_Location>موقع</GlobalSearch_Location>
+    <GlobalSearch_People>الناس</GlobalSearch_People>
+    <GlobalSearch_Advanced_Search>بحث متقدم</GlobalSearch_Advanced_Search>
+    <Navigation_Dashboard>لوحة القيادة</Navigation_Dashboard>
+    <Navigation_Permits>تصاريح</Navigation_Permits>
+    <Navigation_Inspections>التفتيش</Navigation_Inspections>
+    <Navigation_Payments>المدفوعات</Navigation_Payments>
+    <Navigation_Location>موقع</Navigation_Location>
+    <Navigation_People>الناس</Navigation_People>
+    <Navigation_Documments>المستند</Navigation_Documments>
+    <Navigation_Reports>تقارير</Navigation_Reports>
+    <Navigation_GIS>أناقز</Navigation_GIS>
+    <Login_Language>اللغة:</Login_Language>
+    <Login_LoginText>تسجيل الدخول ID CIVIC</Login_LoginText>
+    <Login_RegisterText>خلق فرص عمل جديدة CIVIC ID</Login_RegisterText>
+    <Header_Help>مساعدة</Header_Help>
+    <Header_Support>دعم</Header_Support>
+    <Footer_Contact>اتصل</Footer_Contact>
+    <Footer_Analytics>تحليلات</Footer_Analytics>
+    <Footer_Company>شركة</Footer_Company>
+    <Footer_More>أكثر</Footer_More>
+    <MyDashboard_MyDashboardText>لوحة بلدي</MyDashboard_MyDashboardText>
+    <MyDashboard_TasksText>عمليات التفتيش</MyDashboard_TasksText>
+    <MyDashboard_ScheduledText>المقرر</MyDashboard_ScheduledText>
+    <MyDashboard_RecentlyViewedText>تم الاطلاع عليها مؤخرا</MyDashboard_RecentlyViewedText>
+    <MyDashboard_BulletinBoardText>نشرة المجلس</MyDashboard_BulletinBoardText>
+    <MyDashboard_CalendarText>تقويم</MyDashboard_CalendarText>
+    <MyDashboard_SortBy>ترتيب حسب:</MyDashboard_SortBy>
+    <MyDashboard_DateText>تاريخ</MyDashboard_DateText>
+    <MyDashboard_PriorityText>أفضلية</MyDashboard_PriorityText>
+    <MyDashboard_TypeText>نوع</MyDashboard_TypeText>  
+    <ResultInspection_ResultInsp>يؤدي المفتش</ResultInspection_ResultInsp>
+    <ResultInspection_ResultInspection>نتيجة التفتيش</ResultInspection_ResultInspection>
+    <ResultInspection_UpdateStatus>حالة التحديث:</ResultInspection_UpdateStatus>
+    <ResultInspection_Comments>التفتيش تعليقات</ResultInspection_Comments>
+    <ResultInspection_CommentsPublic>جعل تعليقات الجمهور</ResultInspection_CommentsPublic>
+    <ResultInspection_CommentsRequired>التعليقات التفتيش المطلوبة!</ResultInspection_CommentsRequired>
+    <ResultInspection_Cancel>إلغاء</ResultInspection_Cancel>
+    <ResultInspection_Submit>عرض</ResultInspection_Submit>
+    <Documents>وثائق</Documents>
+    <Documents_ViewAs>عرض بشكل:</Documents_ViewAs>
+    <Documents_List>قائمة</Documents_List>
+    <Documents_Thumbnails>الصور المصغرة</Documents_Thumbnails>
+    <Documents_Storeinset>تخزين في مجموعة:</Documents_Storeinset>
+    <Documents_UploadTip>سحب وإسقاط ملف هنا، أو</Documents_UploadTip>
+    <Documents_ChoosFile>اختيار ملف</Documents_ChoosFile>
+    <Documents_FromComputer>من جهاز الكمبيوتر الخاص بك</Documents_FromComputer>
+    <Documents_DocumentGroup>مجموعة</Documents_DocumentGroup>
+    <Documents_DocumentType>نوع الوثيقة:</Documents_DocumentType>
+    <Documents_Description>الوصف:</Documents_Description>
+    <Documents_DescriptionRequired>وصف المطلوبة!</Documents_DescriptionRequired>
+    <Documents_Cancel>إلغاء</Documents_Cancel>
+    <Documents_Upload>تحميل</Documents_Upload>
+    <MyDashboard_Summary>ملخص</MyDashboard_Summary>
+    <MyDashboard_Condition>حالة:</MyDashboard_Condition>
+    <MyDashboard_Inspector>مفتش:</MyDashboard_Inspector>
+    <MyDashboard_Requestor>الطالب:</MyDashboard_Requestor>
+    <MyDashboard_RequestorPhone>الطالب الهاتف:</MyDashboard_RequestorPhone>
+    <MyDashboard_SchedulingNotes>جدولة ملاحظات:</MyDashboard_SchedulingNotes>
+    <MyDashboard_Owner>المالك:</MyDashboard_Owner>
+    <MyDashboard_Viewinspection>عرض التفتيش</MyDashboard_Viewinspection>
+    <InspectionSummary_Viewing>عرض:</InspectionSummary_Viewing>
+    <InspectionSummary_ViewOf>من</InspectionSummary_ViewOf>
+    <InspectionSummary_Actions>الإجراءات</InspectionSummary_Actions>
+    <InspectionSummary_Reassign>إعادة تعيين</InspectionSummary_Reassign>
+    <InspectionSummary_Reshedule>إعادة جدولة</InspectionSummary_Reshedule>
+    <InspectionSummary_Cancel>إلغاء</InspectionSummary_Cancel>
+    <InspectionSummary_NewInspection>التفتيش الجديدة</InspectionSummary_NewInspection>
+    <InspectionSummary_Created>خلق</InspectionSummary_Created>
+    <InspectionSummary_Type>النوع</InspectionSummary_Type>
+    <InspectionSummary_Description>الوصف</InspectionSummary_Description>
+    <InspectionSummary_PermitType>نوع تصريح:</InspectionSummary_PermitType>
+    <InspectionSummary_Address>العنوان</InspectionSummary_Address>
+    <InspectionSummary_InspectionContact>التفتيش الاتصال</InspectionSummary_InspectionContact>
+    <InspectionSummary_Summary>ملخص</InspectionSummary_Summary>
+    <InspectionSummary_Condition>حالة:</InspectionSummary_Condition>
+    <InspectionSummary_Inspector>مفتش:</InspectionSummary_Inspector>
+    <InspectionSummary_SchedulingNote>جدولة ملاحظات:</InspectionSummary_SchedulingNote>
+    <InspectionSummary_Fees>الرسوم:</InspectionSummary_Fees>
+    <InspectionSummary_BalanceDue>الرصيد المستحق:</InspectionSummary_BalanceDue>
+    <InspectionSummary_ViewRecord>عرض السجل &gt;</InspectionSummary_ViewRecord>
+    <InspectionSummary_ScheduledDateTime>التاريخ المقرر / الوقت:</InspectionSummary_ScheduledDateTime>
+    <InspectionSummary_EditContact>التفتيش الاتصال:</InspectionSummary_EditContact>
+    <InspectionSummary_ContactFirstName>الاسم الأول</InspectionSummary_ContactFirstName>
+    <InspectionSummary_ContactMidName>الاسم الأوسط</InspectionSummary_ContactMidName>
+    <InspectionSummary_ContactLastName>اسم العائلة</InspectionSummary_ContactLastName>
+    <InspectionSummary_ContactPhone>الاتصال رقم الهاتف:</InspectionSummary_ContactPhone>
+    <RecordDetails_RecordDetails>سجل تفاصيل</RecordDetails_RecordDetails>
+    <RecordDetails_Condition>حالة</RecordDetails_Condition>
+    <RecordDetails_ApplicationInfo>معلومات التطبيق</RecordDetails_ApplicationInfo>
+    <RecordDetails_ConditionsApproval>شروط الموافقة</RecordDetails_ConditionsApproval>
+    <RecordDetails_View>رأي &gt;</RecordDetails_View>
+    <RecordDetails_Fees>الرسوم</RecordDetails_Fees>
+    <RecordDetails_BalanceDue>الرصيد المستحق:</RecordDetails_BalanceDue>
+    <FunMenu_Menu>قائمة الطعام</FunMenu_Menu>
+    <FunMenu_Summary>ملخص</FunMenu_Summary>
+    <FunMenu_Checklists>قوائم المراجعة</FunMenu_Checklists>
+    <FunMenu_Documents>وثائق</FunMenu_Documents>
+    <FunMenu_Comments>تعليقات</FunMenu_Comments>
+    <FunMenu_Conditions>الشروط</FunMenu_Conditions>
+    <FunMenu_RelatedInspections>عمليات التفتيش المتعلقة</FunMenu_RelatedInspections>
+    <FunMenu_RecordDetails>سجل تفاصيل</FunMenu_RecordDetails>
+    <!-- conditions -->
+    <Conditions_Conditions>الشروط</Conditions_Conditions>
+    <Conditions_Add>إضافة</Conditions_Add>
+    <Conditions_Delete>حذف</Conditions_Delete>
+    <Conditions_NewCondition>الحالة جديدة</Conditions_NewCondition>
+    <Conditions_NewCondition>تحرير الحالة</Conditions_NewCondition>
+    <Conditions_InsertStandardCondition>إدراج عادي الشرط</Conditions_InsertStandardCondition>
+    <Conditions_ConditionGroup>حالة المجموعة</Conditions_ConditionGroup>
+    <Conditions_ConditionType>حالة نوع</Conditions_ConditionType>
+    <Conditions_ConditionName>حالة اسم</Conditions_ConditionName>
+    <Conditions_Status>حالة</Conditions_Status>
+    <Conditions_Group>مجموعة</Conditions_Group>
+    <Conditions_Type>نوع</Conditions_Type>
+    <Conditions_Severity>خطورة</Conditions_Severity>
+    <Conditions_StatusDate>حالة التسجيل</Conditions_StatusDate>
+    <Conditions_EffectiveDate>تاريخ النفاذ</Conditions_EffectiveDate>
+    <Conditions_ExpirationDate>تاريخ انتهاء الصلاحية</Conditions_ExpirationDate>
+    <Conditions_Inheritable>توريث</Conditions_Inheritable>
+    <Conditions_AppliedbyDept>التي تطبقها قسم</Conditions_AppliedbyDept>
+    <Conditions_AppliedbyUser>التي يطبقها العضو</Conditions_AppliedbyUser>
+    <Conditions_Current>حالي</Conditions_Current>
+    <Conditions_Comments>تعليقات</Conditions_Comments>
+    <Conditions_InsertStandardComments>إدراج معيار تعليقات</Conditions_InsertStandardComments>
+    <Conditions_makepublic>جعل العام</Conditions_makepublic>
+    <Conditions_Cancel>إلغاء</Conditions_Cancel>
+    <Conditions_SaveChanges>حفظ التغييرات</Conditions_SaveChanges>
+    <Conditions_select>- اختر -</Conditions_select>
+    <Conditions_CONDITIONDETAIL>الحالة بالتفصيل</Conditions_CONDITIONDETAIL>
+    <Conditions_CONDITIONHISTORY>حالة التاريخ</Conditions_CONDITIONHISTORY>
+    <Conditions_edit>تحرير</Conditions_edit>
+    <Conditions_Action>عمل</Conditions_Action>
+    <Conditions_AppliedDate>تاريخ التطبيقية</Conditions_AppliedDate>
+    <Conditions_Pleaseselectarecordtodelete>يرجى تحديد سجل حذفها.</Conditions_Pleaseselectarecordtodelete>
+    <Conditions_recordsdeletedsuccessfully>الإجابات حذف بنجاح.</Conditions_recordsdeletedsuccessfully>
+    <Conditions_Group_Label>المجموعة:</Conditions_Group_Label>
+    <Conditions_Appliedbydept_Label>التي تطبقها قسم:</Conditions_Appliedbydept_Label>
+    <Conditions_Type_Label>نوع:</Conditions_Type_Label>
+    <Conditions_Appliedbyuser_Label>تطبق من قبل المستخدم:</Conditions_Appliedbyuser_Label>
+    <Conditions_Name_Label>الاسم:</Conditions_Name_Label>
+    <Conditions_Status_Label>الوضع:</Conditions_Status_Label>
+    <Conditions_Comment_Label>التعليق:</Conditions_Comment_Label>
+    <Conditions_Severity_Label>الخطورة:</Conditions_Severity_Label>
+    <Conditions_StatusDate_Label>حالة التسجيل:</Conditions_StatusDate_Label>
+    <Conditions_Makecommentpublic_Label>جعل التعليق العام:</Conditions_Makecommentpublic_Label>
+    <Conditions_EffectiveDate_Label>فعالية التسجيل:</Conditions_EffectiveDate_Label>
+    <Conditions_Expires_Label>[API] ينتهي:</Conditions_Expires_Label>
+    <Conditions_Inheritable_Label>توريث:</Conditions_Inheritable_Label>
+    <!-- checklists -->
+    <Checklists_Checklists>قوائم المراجعة</Checklists_Checklists>
+    <Checklists_Status_Label>الوضع:</Checklists_Status_Label>
+    <Checklists_Score_Label>يسجل:</Checklists_Score_Label>
+    <Checklists_TotalScore_Label>مجموع نقاط:</Checklists_TotalScore_Label>
+    <Checklists_SaveChanges>حفظ التغييرات</Checklists_SaveChanges>
+    <Checklists_Comments_Label>التعليقات:</Checklists_Comments_Label>
+    <Checklists_InsertFromStoredComments>إدراج تعليقات من مخزن</Checklists_InsertFromStoredComments>
+    <Checklists_AttachFiles>إرفاق الملفات ...</Checklists_AttachFiles>
+    <Checklists_History>تاريخ</Checklists_History>
+    <!-- Create New -->
+    <CreateNew_Current_Permit>تصريح الحالية:</CreateNew_Current_Permit>
+    <CreateNew_Current_Permit_CustomId>تصريح الحالية</CreateNew_Current_Permit_CustomId>
+    <CreateNew_New_Permit>تصريح جديد:</CreateNew_New_Permit>
+    <CreateNew_New_Residential>سكنية جديدة</CreateNew_New_Residential>
+    <CreateNew_Permit_Type>نوع تصريح:</CreateNew_Permit_Type>
+    <CreateNew_Inspection_Type>نوع التفتيش:</CreateNew_Inspection_Type>
+    <CreateNew_Inspection_Type_select>-- اختر --</CreateNew_Inspection_Type_select>
+    <CreateNew_Scheduled_Date_Time>التاريخ المقرر / الوقت:</CreateNew_Scheduled_Date_Time>
+    <CreateNew_Scheduled_Date>التاريخ المقرر:</CreateNew_Scheduled_Date>
+    <CreateNew_Scheduled_Time>الوقت المقرر:</CreateNew_Scheduled_Time>
+    <CreateNew_Inspector>مفتش:</CreateNew_Inspector>
+    <CreateNew_Scheduling_Notes>جدولة ملاحظات:</CreateNew_Scheduling_Notes>
+    <CreateNew_Inspection_Contact>التفتيش الاتصال:</CreateNew_Inspection_Contact>
+    <CreateNew_Inspection_Contact_FirstName>الاسم الأول</CreateNew_Inspection_Contact_FirstName>
+    <CreateNew_Inspection_Contact_MiddleName>الاسم الأوسط</CreateNew_Inspection_Contact_MiddleName>
+    <CreateNew_Inspection_Contact_LastName>اسم العائلة</CreateNew_Inspection_Contact_LastName>
+    <CreateNew_Contact_Phone_Number>الاتصال رقم الهاتف:</CreateNew_Contact_Phone_Number>
+    <CreateNew_Cancel>إلغاء</CreateNew_Cancel>
+    <CreateNew_Save_Inspection>حفظ التفتيش</CreateNew_Save_Inspection>
+    <!-- Comments -->
+    <Comments_Comments>تعليقات</Comments_Comments>
+    <Comments_Insert_From_Standard_Comments>إدراج من ستاندرد تعليقات</Comments_Insert_From_Standard_Comments>
+    <Comments_Standard_Comments_Groups>تعليق المجموعات القياسية</Comments_Standard_Comments_Groups>
+    <Comments_ShowAll>تظهر جميع</Comments_ShowAll>
+    <Comments_Search_By_Keyword>البحث عن طريق الكلمات الرئيسية</Comments_Search_By_Keyword>
+    <Comments_ClearAll>واضح جميع</Comments_ClearAll>
+    <Comments_Save_Close>حفظ وإغلاق</Comments_Save_Close>
+    <Comments_Cancel>إلغاء</Comments_Cancel>
+    <!-- Related Inspections -->
+    <Related_Related_Inspections>عمليات التفتيش المتعلقة</Related_Related_Inspections>
+    <Related_Inspection_Type>نوع التفتيش</Related_Inspection_Type>
+    <Related_Inspector>مفتش</Related_Inspector>
+    <Related_Status>حالة</Related_Status>
+    <!-- Intake Form -->
+    <Intake_New_Application>التطبيق الجديد</Intake_New_Application>
+    <Intake_Search_For_Record_Type>بحث عن نوع السجل</Intake_Search_For_Record_Type>
+    <Intake_Choose_From_List>اختر من القائمة</Intake_Choose_From_List>
+    <Intake_My_Favorites>بلدي المفضلة</Intake_My_Favorites>
+    <Intake_Saved_Drafts>المسودات المحفوظة</Intake_Saved_Drafts>
+  </Label>
+</LangOption>
+

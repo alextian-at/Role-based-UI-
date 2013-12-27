@@ -1,0 +1,28 @@
+﻿<script src="/Scripts/CommonJs/FileDrop/jquery.filedrop.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/Content/app/documents.css" />
+<form role="form" name="formUpload" id="formUpload" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-sm-6 col-md-3 documents-img-margin" ng-repeat="item in recordList | filter:resultinspection.Store.value">
+            <p>
+                <a target="_blank" href="/App/DownLoadDocument?documentid={{item.id}}" class="document-thumbnail">
+                    <span ng-show="item.type=='application/octet-stream'">
+                        <img width="134" height="94" src="/Images/Ico/icotxt.png" />
+                    </span>
+                    <span  ng-show="item.type=='image/jpeg'">
+                        <img width="134" height="94" src="/Images/Ico/icpjpg.png" />
+                    </span>
+                    <span  ng-show="item.type=='application/pdf'">
+                        <img width="134" height="94" src="/Images/Ico/icopdf.png" />
+                    </span>
+                </a>
+                <br />{{item.fileName}}
+                <br />{{item.type}}
+                <br /><a href="javascript:void(0);" ng-click="ConfirmDeleteDocument(item.id);">Delete</a>
+            </p>
+        </div>
+        <div class="col-sm-6 col-md-3 documents-img-margin" accela-file-upload id="DocumentUploadFile"  url="/inspections/{{inspectionId}}/documents">
+        </div>
+
+    </div>
+</form>
+

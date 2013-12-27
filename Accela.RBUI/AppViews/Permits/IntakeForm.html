@@ -1,0 +1,104 @@
+﻿<div class="row" ng-controller="IntakeFormCtrl">
+    <div class="col-md-12">
+        <div class="widget">
+            <div class="widget-header">
+                <h4 ng-bind="Language.Label.Intake_New_Application"></h4>
+            </div>
+            <div class="widget-content">
+                <form role="form">
+                    <div class="input-group">
+                        <input type="text" class="form-control  input-lg" ng-click="OpenSearchList()" ng-model="permit.permitTypes" placeholder="{{Language.Label.Intake_Search_For_Record_Type}}" />
+                        <span class="input-group-addon cursor-pointer">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </span>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <a href="javascript:;" ng-click="OpenRecordList()" ng-bind="Language.Label.Intake_Choose_From_List"></a>
+                    </div>
+                </div>
+                <div class="record-type-list">
+                    <div class="col-md-12">
+                        <h5 ng-bind="recordTypeListTitle"></h5>
+                        <ul class="list-group">
+                            <li ng-repeat="item in permitTypeList | filter:permit.permitTypes" class="cursor-pointer" ng-click="ChooseRecordType(item)">{{item.display}}</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdownlist-footer">
+                        <div class="col-md-12">
+                            <button class="btn btn-default" ng-click="CloseRecordList()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget">
+            <div class="widget-header">
+                <h4 ng-bind="Language.Label.Intake_My_Favorites"></h4>
+            </div>
+            <div class="widget-content">
+                <ul class="list-group">
+                    <li><a href="#/CreatePermits">Grading</a></li>
+                    <li><a href="#/CreatePermits">Pool/Spa</a></li>
+                    <li><a href="#/CreatePermits">Alteration</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="save-drafts">
+    <div class="col-md-12">
+        <div class="widget">
+            <div class="widget-header">
+                <h4 ng-bind="Language.Label.Intake_Saved_Drafts"></h4>
+            </div>
+            <div class="widget-content">
+                <div class="row">
+                    <div class=" col-md-6">
+                        <dl class="dl-horizontal drafts">
+                            <dt>
+                                <img src="/Content/images/u247.png" />
+                            </dt>
+                            <dd>
+                                <a href="javascript:;">123 Main Street</a>
+                                <p>Anytown, CA</p>
+                                <p>5/15/2013</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class=" col-md-6">
+                        <dl class="dl-horizontal drafts">
+                            <dt>
+                                <img src="/Content/images/u247.png" />
+                            </dt>
+                            <dd>
+                                <a href="javascript:;">123 Main Street</a>
+                                <p>Anytown, CA</p>
+                                <p>5/15/2013</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class=" col-md-6">
+                        <dl class="dl-horizontal drafts">
+                            <dt>
+                                <img src="/Content/images/u247.png" />
+                            </dt>
+                            <dd>
+                                <a href="javascript:;">123 Main Street</a>
+                                <p>Anytown, CA</p>
+                                <p>5/15/2013</p>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

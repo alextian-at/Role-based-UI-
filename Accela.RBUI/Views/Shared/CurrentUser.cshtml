@@ -1,0 +1,16 @@
+﻿<span>{{Language.Label.Header_Hello}},</span>
+<a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown">
+    @{
+        if (Session["inspectorId"] != null)
+        {
+        @(Session["inspectorId"].ToString())
+        }
+        else
+        {
+        <span ng-bind="Language.Label.Login" class="asap-12-b">&nbsp;</span>
+        }
+    }
+    <i class="glyphicon glyphicon-chevron-down"></i></a>
+<ul class="dropdown-menu">
+    <li>@Html.ActionLink("{{Language.Label.Logout}}", "Logout", "Account")</li>
+</ul>

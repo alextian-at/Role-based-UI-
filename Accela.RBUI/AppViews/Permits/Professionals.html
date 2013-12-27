@@ -1,0 +1,23 @@
+﻿<div class="row">
+    <div class="col-sm-8">
+        <form role="form">
+            <div class="input-group">
+                <input type="text" class="form-control  input-lg" placeholder="Enter any part of name or address to search" />
+                <span class="input-group-addon cursor-pointer" ng-click="search();">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-4">
+        <button type="button" class="btn btn-default" ng-click="openProfessionalModal('CreateProfessional','New Licensed Professional')">
+            <span>Create New</span>
+        </button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <a href="javascript:;" ng-click="openProfessionalModal('AdvancedProfessionalSearch','Licensed Professional Advanced Search')">Advanced Search</a>
+    </div>
+</div>
+<div ng-include src="professionalsSrc" ng-show="isShowList"></div>

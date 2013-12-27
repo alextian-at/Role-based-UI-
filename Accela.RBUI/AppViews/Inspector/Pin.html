@@ -1,0 +1,15 @@
+﻿<link rel="stylesheet" href="../../Content/sharedcss/pin/pin.css" type="text/css" />
+<div class="pinned btn-group summary-menu" style="z-index:60;" id="pindiv">
+    <button class="btn dropdown-toggle inspection-menu" type="button" data-toggle="dropdown" id="pinMenu">
+        <span title="{{Language.Label.FunMenu_Menu}}" ng-bind="Language.Label.FunMenu_Menu" class="pull-left"></span> <span class="icon-font-white"><i class="fa fa-bars pull-right"></i> </span>
+    </button>
+    <ul class="dropdown-menu pull-right menu-ul" role="menu">
+        <li><a ng-click="menuClick('Summary')"><span title="{{Language.Label.FunMenu_Summary}}" ng-bind="Language.Label.FunMenu_Summary"></span></a></li>
+        <li><a ng-click="menuClick('Checklists')"><span title="{{Language.Label.FunMenu_Checklists}}" ng-bind="Language.Label.FunMenu_Checklists"></span></a></li>
+        <li><a ng-click="menuClick('Documents')"><span title="{{Language.Label.FunMenu_Documents}}" ng-bind="Language.Label.FunMenu_Documents"></span></a></li>
+        <li><a ng-click="menuClick('Comments')"><span title="{{Language.Label.FunMenu_Comments}}" ng-bind="Language.Label.FunMenu_Comments"></span></a></li>
+        <li><a ng-click="menuClick('Conditions')"><span title="{{Language.Label.FunMenu_Conditions}}" ng-bind="Language.Label.FunMenu_Conditions"></span></a></li>
+        <li><a ng-click="menuClick('RelatedInspections')"><span title="{{Language.Label.FunMenu_RelatedInspections}}" ng-bind="Language.Label.FunMenu_RelatedInspections"></span></a></li>
+        <li><a ng-click="menuClick('RecordDetails')"><span title="{{Language.Label.FunMenu_RecordDetails}}" ng-bind="Language.Label.FunMenu_RecordDetails"></span></a></li>
+    </ul>
+</div>

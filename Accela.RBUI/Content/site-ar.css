@@ -1,0 +1,15 @@
+﻿.clear-col-left-padding{
+    padding-left:0px !important;
+}
+.clear-col-right-padding{
+    padding-right:0px !important;
+}
+
+@media (max-width: 992px) {
+    .clear-col-left-padding{
+        padding-left:15px !important;
+    }
+    .clear-col-right-padding{
+        padding-left:15px !important;
+    }
+}

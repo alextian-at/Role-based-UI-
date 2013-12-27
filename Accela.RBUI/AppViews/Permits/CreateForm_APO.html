@@ -1,0 +1,510 @@
+﻿<div ng-controller="CreateFromAPOController">
+
+    <div id="CreateAPO" accela-modal="CreateAPOModal">
+        <form id="CreateAddressForm" name="CreateAddressForm" ng-show="CreateCategory=='Address'">
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Street # </label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Direction</label>
+                    <select class="form-control" ng-options=" item.value as item in select.Directions ">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Street Name</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Street Type</label>
+                    <select class="form-control">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Primary</label>
+                    <select class="form-control" ng-options="item.value as item in select.Primarys">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Unit Type</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Unit #</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label class="control-label">City</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">State</label>
+                    <select class="form-control">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Zip Code</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </form>
+        <form id="CreateParcelForm" name="CreateParcelForm" ng-show="CreateCategory=='Parcel'">
+            <div class="row">
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Parcel # </label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Lot </label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Block </label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Primary</label>
+                    <select class="form-control" ng-options="item.value as item in select.Primarys">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9 form-group">
+                    <label class="control-label">Legal Description</label>
+                    <textarea class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label class="control-label">Township</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Section</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Range</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </form>
+        <form id="CreateOwnerForm" name="CreateOwnerForm" ng-show="CreateCategory=='Owner'">
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label class="control-label">Name </label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Phone </label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Primary</label>
+                    <select class="form-control" ng-options="item.value as item in select.Primarys">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label class="control-label">Address Line 1 </label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label">Email </label>
+                    <input type="email" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label class="control-label">Address Line 2 </label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">City</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Sate</label>
+                    <select class="form-control">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Zip Code</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label class="control-label">Country/Region</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-8">
+                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="AdvancedSearch" accela-modal="AdvancedSearchAPOModal">
+        <div class="row">
+            <div class="col-sm-3">
+                <span class=" col-custom-middle"><h4>Search For:</h4></span>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label class="">
+                                <input type="radio" name="apo" ng-model="AdvancedSearchCatetory" value="Address" />
+                                Address
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label class="">
+                                <input type="radio" name="apo" ng-model="AdvancedSearchCatetory" value="Parcel" />
+                                Parcel
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label class="">
+                                <input type="radio" name="apo" ng-model="AdvancedSearchCatetory" value="Owner" />
+                                Owner
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Address" ng-show="AdvancedSearchCatetory=='Address'">
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Street # (start)</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-7 form-group">
+                    <label class="control-label">Street Name</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Street Type</label>
+                    <select class="form-control">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Direction</label>
+                    <select class="form-control" ng-options=" item.value as item in select.Directions ">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Unit # (start)</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Unit # (end)</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div id="Parcel" ng-show="AdvancedSearchCatetory=='Parcel'">
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Parcel # </label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Street # (start)</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Direction</label>
+                    <select class="form-control" ng-options=" item.value as item in select.Directions ">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Street Name</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">City</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">State</label>
+                    <select class="form-control">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9 form-group">
+                    <label class="control-label">Owner</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div id="Owner" ng-show="AdvancedSearchCatetory=='Owner'">
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Name </label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">First Name </label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Last Name </label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Mail City</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Mail State</label>
+                    <select class="form-control">
+                        <option value="">--select--</option>
+                    </select>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">E-Mail</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <label class="control-label">Parcel # </label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-8">
+                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" ng-click="SubmitAdvancedSearch()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div accela-modal="ConditionAPOModal">
+        <div class="row">
+            <div class="col-sm-2">
+                Group:
+            </div>
+            <div class="col-sm-4">XYZ</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                Type:
+            </div>
+            <div class="col-sm-4">XYZ</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                Name:
+            </div>
+            <div class="col-sm-4">XYZ</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                Status:
+            </div>
+            <div class="col-sm-4">XYZ</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                Severity:
+            </div>
+            <div class="col-sm-4">XYZ</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                Comments:
+            </div>
+            <div class="col-sm-4">XYZ</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-8">
+                <button class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <style type="text/css">
+        .apo-condition-lock {
+            color: red;
+        }
+
+        .col-border {
+            border-top: 1px solid #ccc;
+        }
+
+        .check-primary {
+            color: gray;
+        }
+
+            .check-primary:hover {
+                color: green;
+            }
+
+            .check-primary .check {
+                color: green;
+            }
+    </style>
+
+    <section class="target" ng-class="{target:SectionIndex==0}">
+        <header ng-click="SelectedTab(0);" ng-style="{top:(0*65)+'px'}">
+            <h3><a href="javascript:void(0);">Location</a><p>Address, Parcel,Owner</p></h3>
+        </header>
+        <div class="content">
+            <div class="widget">
+                <div class="widget-header">
+                    <h3>Search for Address, Parcel or Owner</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="row"><div class="col-sm-12">Choose search type and enter search terms. Or, choose from the map.</div></div>
+                    <div class="row grid-row">
+                        <div class="col-sm-5 form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" />
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        {{SearchCategory}} <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="javascript:void(0);" ng-click="setSearchCategory('Address');">Address</a></li>
+                                        <li><a href="javascript:void(0);" ng-click="setSearchCategory('Parcel');">Parcel</a></li>
+                                        <li><a href="javascript:void(0);" ng-click="setSearchCategory('Owner');">Owner</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 form-group">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <button class="btn btn-default form-control" ng-click="SubmitSearch();">Search</button>
+                                </div>
+                                <div class="col-xs-1"><span class="col-custom-middle">OR</span></div>
+                                <div class="col-xs-4">
+                                    <div class="btn-group">
+                                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Create New <span class="caret"></span></button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="javascript:void(0);" ng-click="showAPOCreateCategory('Address')">Address</a></li>
+                                            <li><a href="javascript:void(0);" ng-click="showAPOCreateCategory('Parcel')">Parcel</a></li>
+                                            <li><a href="javascript:void(0);" ng-click="showAPOCreateCategory('Owner')">Owner</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4"><a class="col-custom-middle" href="javascript:void(0);" ng-click="showAPOLocation();">Show saved locations</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group"><div class="col-sm-12"><a href="javascript:;" ng-click="showAPOAdvancedSearchModal()">Advanced Search</a></div></div>
+
+                    <div id="SearchResult" ng-show="!locationshow&&SearchResultList.length>0">
+                        <alert>{{SearchResultList.length}} matches found. Select one or more and click Add Selected. To add a new address, click Create New above.</alert>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class=" col-sm-12">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    Address: 12 Oak Street
+                                                    Bridgeview, CA 98888
+                                                </div>
+                                                <div>
+                                                    Parcel: 5769B
+                                                </div>
+                                                <div>    Owner: Linda Miller</div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <div class="apo-condition-lock">A Lock was placed on this address on 5/28/2013.</div>
+                                                    <a href="javascript:void(0);" ng-click="showAPOConditionModal()">Learn more.</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <button class="btn btn-default">
+                                    Add Selected
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="Location" ng-show="locationshow">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-6"><label>Locations</label></div>
+                                <div class="col-xs-6"><span class="pull-right"><a href="javascript:void(0);" ng-click="setViewOn('list')">View as List</a> | <a href="javascript:void(0);" ng-click="setViewOn('map')">View on Map</a></span></div>
+                            </div>
+                            <div class="col-border"></div>
+                            <div class="row" id="LocationList" ng-show="!ViewOnMap">
+                                <div class="col-sm-12" ng-grid>
+                                </div>
+                            </div>
+                            <div class="row" id="LocationMap" ng-show="ViewOnMap">
+                                <div class="col-sm-12" style="height:460px;" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" id="LocationMapDiv">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-include="'CreateFormFooterTempate'"></div>            
+        </div>
+    </section>
+    <script type="text/ng-template" id="LocationAddressTemplate">
+        <div>{{item.address}} <a href="javascript:void(0);" class="check-primary"><i class="glyphicon glyphicon-ok"></i></a></div>
+    </script>
+    <script type="text/ng-template" id="LocationParcelTemplate">
+        <div>{{item.parcel}} <a href="javascript:void(0);" class="check-primary"><i class="glyphicon glyphicon-ok"></i></a></div>
+    </script>
+    <script type="text/ng-template" id="LocationOwnerTemplate">
+        <div>{{item.owner}} <a href="javascript:void(0);" class="check-primary"><i class="glyphicon glyphicon-ok"></i></a></div>
+    </script>
+    <script type="text/ng-template" id="LocationRemoveTemplate">
+        <a href="javascript:void(0);" ng-click="RemoveLocation(item.id);">Remove</a>
+    </script>
+</div>

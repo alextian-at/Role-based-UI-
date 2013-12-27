@@ -1,0 +1,106 @@
+﻿
+<div class="row" ng-controller="DashBoardInspectionSummaryCtrl">
+    <div class="col-md-5">
+        <div id="scroll-pane" onscroll="Scrollbottom(this);" class="mydashboard-scroll-pane-grid" style="padding-right:5px">
+            <div>
+                <div class="row  mydashboard-inspectionlist" style="margin-left:0px;margin-right:0px;" ng-click="LoadSummary(item.id,item.recordId.id);" id="{{item.id}}" ng-repeat="item in recordList  | orderBy:Filed:rev">
+                    <div class="col-md-8">
+                        <div class="row mydashboard-address">
+                            <div class="col-md-12 clear-col-left-padding clear-col-right-padding">
+                                <ul class="list-inline">
+                                    <li class="mydashboard-address-icon">
+                                        <img class="mydashboard-disable-img"  src="/Images/Ico/MapPoint.png" />
+                                    </li>
+                                    <li class="mydashboard-address-display"><a ng-click="SetCookie(item.id,item.id,365);" href="#/InspectionSummary/{{item.type.group}}/{{item.id}}">{{item.address.houseNumberStart}} {{item.address.streetName}} Dr,{{item.address.city}} {{item.address.postalCode}}</a></li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li class="mydashboard-li"></li>
+                                    <li class="mydashboard-address-id">{{item.recordId.customId}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mydashboard-inspectiontype">
+                            <div class="col-md-12 mydashboard-col-padding">
+                                <ul class="list-inline">
+                                    <li class="mydashboard-li">
+                                        <img class="mydashboard-disable-img"  src="/Images/Ico/InspectionType.png" />
+                                    </li>
+                                    <li class="mydashboard-inspectiontype-display">{{item.type.value}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mydashboard-permittype">
+                            <div class="col-md-12 mydashboard-col-padding">
+                                <ul class="list-inline">
+                                    <li class="mydashboard-li">
+                                        <img class="mydashboard-disable-img"  src="/Images/Ico/RecordType.png" />
+                                    </li>
+                                    <li class="mydashboard-permittype-display">
+                                        <span ng-show="item.recordType.type!=item.recordType.subType" class="asap-11">
+                                            {{item.recordType.type}} {{item.recordType.subType}}
+                                        </span>
+                                        <span ng-show="item.recordType.type==item.recordType.subType" class="asap-11">
+                                            {{item.recordType.type}}
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mydashboard mydashboard-scheduledate">
+                        <div class="row" ng-show="ReadCookie(item.id);">
+                            <div class="col-md-12 mydashboard-new">
+                                <p class="text-left">NEW</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="list-unstyled">
+                                    <li class="mydashboard-scheduledate-title">
+                                        {{item.status.value}}
+                                    </li>
+                                    <li class="mydashboard-scheduledate-display">
+                                        <span ng-bind-html-unsafe="formatdate(item.scheduleDate)"></span>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-7  clear-col-left-padding">
+        <div ng-include src="'/AppViews/Inspector/MyDashboard/Summary.html'"></div>
+    </div>
+</div>
+
+
+<script id="sourcecode" type="text/javascript">
+    $(function () {
+        setTimeout("Loadscroll()", 200);
+    });
+    function Loadscroll() {
+        var element = $('#scroll-pane').jScrollPane();
+        api = element.data('jsp');
+        var throttleTimeout;
+        $(window).bind(
+            'resize',
+            function () {
+                if (!throttleTimeout) {
+                    throttleTimeout = setTimeout(
+                        function () {
+                            api.reinitialise();
+                            throttleTimeout = null;
+                        },
+                        50
+                    );
+                }
+            }
+        );
+    }
+</script>
+
+

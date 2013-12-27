@@ -1,0 +1,20 @@
+﻿<link rel="stylesheet" type="text/css" href="/Content/app/relatedinspections.css" />
+<div class="row summary-detail" ng-controller="RelatedInspectionsController">
+    <div class="row">
+        <div class="col-md-12 relatedinspections-title-margin" ng-bind="Language.Label.Related_Related_Inspections"></div>
+        <div class="col-md-12">
+            <table class="table table-bordered table-margin text-left">
+                <tr class="active">
+                    <td ng-bind="Language.Label.Related_Inspection_Type"></td>
+                    <td ng-bind="Language.Label.Related_Inspector"></td>
+                    <td ng-bind="Language.Label.Related_Status"></td>
+                </tr>
+                <tr ng-repeat="item in RelatedInspections">
+                    <td>{{item.type.text}}</td>
+                    <td>{{item.inspectorId}}</td>
+                    <td>{{item.status.text}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

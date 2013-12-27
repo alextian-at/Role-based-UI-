@@ -1,0 +1,108 @@
+﻿<link rel="stylesheet" href="../../../Content/app/summary-checklist.css" type="text/css" />
+<div class="row summary-detail" ng-controller="ChecklistCtrl">
+    <div class="summary-hearder-div">
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="asap-16-b header-title" ng-bind="Language.Label.Checklists_Checklists"></span></div>
+        </div>
+    </div>
+    <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
+    <div ng-show="checklists.length>0">
+        <div class="row container-top">
+            <div class="col-lg-3">
+                <select id="ddlChecklist" ng-model="checklistSelected" class="form-control" ng-options="item.type.value for item in checklists" ng-change="selectCheckListChange()">
+                </select>
+            </div>
+
+            <div class="col-lg-9" ng-show="false">
+                <button type="button" class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-paperclip"></span>Attach Files
+                </button>
+            </div>
+        </div>
+
+        <script type="text/ng-template" id="HeaderTemplate">
+             <div class="row " name="checklistForm">
+                        <div class="col-lg-4 form-group">
+                            <label title="Status" class="control-label">{{Language.Label.Checklists_Status_Label}}</label>
+                            <select class="form-control checklist-status-select " ng-change="batchStatusChange(batchStatus)" ng-model="batchStatus" ng-options="item.text for item in checkListStatus">
+                            </select>
+                        </div>
+                        <div class="col-lg-2 " ng-class="{'has-error':checklistForm.score.$invalid}"">
+                            <label title="Score" class="control-label">{{Language.Label.Checklists_Score_Label}}</label>
+                            <input class="form-control checklist-status-input" type="text" name="score" ng-model="batchScore" accela-number ng-change="batchScoreChange(batchScore)" />
+                        </div>
+                        <div class=" col-lg-3 ">
+                         <label title="Total Score" class="control-label">{{Language.Label.Checklists_TotalScore_Label}}</label>
+                            <input class="form-control checklist-status-input" type="text" name="score" ng-model="totalScore" ng-disabled="true" accela-number/>
+                        </div>
+            <div class="col-lg-3 ">
+                        <button type="button" class="btn btn-default btn-sm  pull-right " ng-click="SaveChange()">
+                            {{Language.Label.Checklists_SaveChanges}}
+                        </button>
+                    </div>
+         
+        </script>
+        <script type="text/ng-template" id="FirstTemplate">
+           <div class="row">
+            <div class="col-lg-8">
+                <div ng-click="toggleImg('img'+item.id,'collapse'+item.id,item)" data-toggle="collapse">
+                    <img src="../../../Images/Inspector/arrow-right.png" id="img{{item.id}}" width="12" height="12" style="margin-top: -2px;" />
+                    <span>{{item.checkListItem.text}}</span>
+                </div>
+                <div id="collapse{{item.id}}" class="collapse" ng-include="item.itemtemplate">
+                    
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <a ng-show="item.comment&&item.comment.value.length>0" href="javascript:void(0);" ng-click="toggleImg('img'+item.id,'collapse'+item.id,item.id)">
+                    <img src="../../../Images/Inspector/comment.png" width="15" height="15" alt="comment" /></a>
+                <a ng-show="item.documents&&item.documents.length>0" href="javascript:void(0);" ng-click="toggleImg('img'+item.id,'collapse'+item.id,item.id)">
+            <i class="glyphicon glyphicon-paperclip"></i></a>
+            </div>
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <select class="form-control" ng-options="item.text for item in checkListStatus" ng-model="item.status" ng-change="itemStatusChange(item)" ng-disabled="item.checked">
+                        </select>
+                        <a ng-click="dialogHistory('History','checklistHistoryDialog')">History[API]</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <input class="form-control" ng-model="item.score" type="text" ng-disabled="item.checked" ng-change="itemScoreChange(item.score)" accela-number />
+                    </div>
+                </div>
+            </div>
+        </div>
+        </script>
+
+        <script type="text/ng-template" id="ItemShowTemplate">
+            <div class="panel-body">
+                        <div class="row">
+                            <span>{{Language.Label.Checklists_Comments_Label}}</span>
+                            <span class="pull-right"><a href="javascript:void(0);" ng-click="OpenStandardCommentsModal(item)">{{Language.Label.Checklists_InsertFromStoredComments}}</a></span>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <textarea class="form-control" rows="3" ng-model="item.comment.value"></textarea>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-3" accela-file-upload id="{{item.id}}" type="buttonStyle" url="/inspections/{{inspectionid}}/checklists/{{checklistSelected.id}}/checklistItems/{{item.id}}/documents"></div>
+                            <div class="col-sm-1" ng-show="item.getdocuments"><img src="../../../images/ajax-loader-min.gif" /></div>
+                            <div class="col-sm-8">
+                                <ul>
+                                    <li ng-repeat=" doc in item.documents "><a href="../../../app/DownLoadDocument?documentid={{doc.id}}" target="_blank" >{{doc.fileName}}</a>&nbsp;
+            <a class="btn" ng-click="ChecklistItemDocumentDelte(doc.id,item.id)" href="javascript:void(0);"><i class="glyphicon glyphicon-trash"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        </script>
+
+        <div ng-grid>
+        </div>
+
+    </div>
+    <div ng-include src="'/AppViews/Inspector/StandardComment.html'"></div>
+    <div ng-include src="'/AppViews/Inspector/ChecklistHistory.html'"></div>
+</div>

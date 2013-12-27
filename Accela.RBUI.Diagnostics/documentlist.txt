@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-sm-6 col-md-3 documents-img-margin" ng-repeat="item in recordList">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#" class="thumbnail">
+                    <img src="/Images/Documents.png" />
+                </a>
+                {{item.fileName}}<br />
+                {{item.type}}
+            </div>
+        </div>
+        <div class="row" ng-show="$last">
+            <div class="col-md-6">
+                <a href="#" class="thumbnail">
+                    <img src="/Images/Documents.png" />
+                </a>
+                {{item.fileName}}<br />
+                {{item.type}}
+            </div>
+            <div class="col-md-6">
+                <a class="cursor-pointer" ng-click="showmodaldialog('Document Upload', 'Document Upload', 'DocumentUpload-dialog', 800);">click upload</a>
+            </div>
+        </div>
+    </div>
+</div>

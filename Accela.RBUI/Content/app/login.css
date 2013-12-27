@@ -1,0 +1,35 @@
+﻿.login-div {
+    height: 580px;
+}
+
+.login-modal-div {
+    display: block;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    margin-top: 15%;
+}
+
+.language-select {
+    width: 100px;
+}
+
+.login-button {
+    width: 180px;
+}
+
+.login-div .modal-content {
+    border: 1px solid #999999;
+}
+
+.navbar-nav {
+    width:180px;
+}
+
+.navbar-nav li {
+    display: inline-block;
+}
+
+.modal-title {
+    font-family:"Asap";
+}

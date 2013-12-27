@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAnonym.cshtml";
+}
+@using Accela.RBUI.CommonLib;
+@using System.Configuration;
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    <link rel="stylesheet" type="text/css" href="/Content/app/login.css" />
+    <div class="login-div">
+        <div class="modal login-modal-div" ng-controller="LoginController">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><span ng-bind="Language.Label.Login_Welcome"></span>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-inline form-group">
+                            <label for="lblLanguage"><span ng-bind="Language.Label.Login_Language"></span></label>
+                            <select id="ddlLang" class="language-select" ng-model="language" ng-options="item.lang for item in languages" ng-change="changeLang()">
+                            </select>
+                            <div class="modal-footer">
+                                <p class="text-center">
+                                    @{
+    string RawUrl = Request.RawUrl;
+    int StartIndex = Request.RawUrl.IndexOf("?code");
+    if (StartIndex >= 0)
+    {
+        RawUrl = Request.RawUrl.Remove(StartIndex, Request.RawUrl.Length - StartIndex);
+    }
+    string Client_id = ConfigurationManager.AppSettings["Client_id"].ToString();
+    string AccelaScope = ConfigurationManager.AppSettings["AccelaScope"].ToString();
+    string AuthorizeUrl = "" + ConfigurationManager.AppSettings["Oauth2AuthorizeUrl"] + "?client_id=" + Client_id + "&environment=TEST&agency_name=BPTDEVV4&redirect_uri=http://" + Request.Url.Host + ":" + Request.Url.Port + "" + RawUrl + "&state=abcxyz123&scope=" + AccelaScope + "&response_type=code";
+                                    }
+                                    <input type="button" onclick="window.location.href='@AuthorizeUrl    '" name="btnLogin" id="btnLogin" class="btn btn-default login-button" value="{{Language.Label.Login_LoginText}}" />
+                                    <br />
+                                    <br />
+                                    <input type="button" onclick="window.open('https://user.dev.accela.com/Register/Register')" name="NewCivicId" id="btnNewCivicId" class="btn btn-default login-button" value="{{Language.Label.Login_RegisterText}}" />
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function LoginController($scope, $http) {
+
+            /**language select js**/
+            $scope.method = 'GET';
+            $scope.url = '@Url.Action("GetLanguages")' + "?time=" + Math.random();
+            $scope.languages = [];
+            $scope.language = null;
+
+            $scope.getLanguages = function () {
+                $http({ method: $scope.method, url: $scope.url }).
+                success(function (data, status) {
+                    var temp = data; //last one is current lang;
+                    var current = temp[temp.length - 1];
+                    temp.pop();
+                    $scope.languages = temp;
+                    for (var i = 0; i < $scope.languages.length; i++) {
+                        if ($scope.languages[i].value == current.value) {
+                            $scope.language = $scope.languages[i];
+                            break;
+                        }
+                    }
+
+                }).
+               error(function (data, status) {
+                   alert("Request failed");
+               });
+            };
+
+            $scope.getLanguages();
+
+            $scope.changeLang = function () {
+                if ($scope.language != null) {
+                    window.location.href = '@Url.Action("ChangeLanguage")' + "?lang=" + $scope.language.value;
+                }
+
+            };
+            /**language select js end**/
+
+        }
+
+
+    </script>
+}
+

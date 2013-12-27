@@ -1,0 +1,18 @@
+﻿<div accela-modal="LookUpPermitID" id="lookUpPermitID">
+    <div class="form-group row">
+        <div class="col-lg-10"><span>Search Results:</span></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-10 ">
+            <ul class="list-group">
+                <li ng-repeat="item in PermitIDList" class="ng-scope cursor-pointer" onclick="javascript:$(this).parent().find('li').removeClass('active');$(this).addClass('active');"><a ng-click="changePermitId(item.customId);">{{item.customId}}</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-right">
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-bind="Language.Label.Comments_Cancel"></button>
+            <button type="button" class="btn btn-primary" id="save" ng-click="savePermitID()">Save</button>
+        </div>
+    </div>
+</div>

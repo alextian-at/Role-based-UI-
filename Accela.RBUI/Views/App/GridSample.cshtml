@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "GridTest";
+}
+
+<div ng-app="inspector" class="row">
+    <div class="panel " ng-controller="GridPageController">
+        <div class="panel-heading">
+            <form ng-submit="searchSubmit()">
+                <div class="input-group">
+                    <input type="text" class="form-control"  />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default">Search</button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            <div >
+            <button ng-click="check()" class="btn btn-default">"Checked" Inspection</button>
+            <button ng-click="select()" class="btn btn-default">"Selected" Inspection</button>
+                </div>
+        </div>
+        <div ng-grid >
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/Scripts/App/Directives/GridDirective.js"></script>
+<script type="text/javascript" src="/Scripts/App/Directives/EventDirective.js"></script>
+
+<script type="text/ng-template" id="gridEditT">
+        <a ng-click="delete(item.id)" >Delete</a>
+    <a ng-click="edit(item)" >Edit</a> 
+</script>
+<script type="text/javascript">
+    RBUIApp.controller("GridPageController", ["$scope", "$http", "$filter", function ($scope, $http, $filter) {
+
+        $scope.searchModel = { input: "",name:"" };
+
+        $scope.gridOptions = {
+            columns: [
+                { name: "id", checkboxcolumn: true, width: '8%', align: 'center', headerAlign: 'center' },
+                { name: "id", title: "Id", sortable: true, width: '23%', filtertype: 'textbox' },
+                {
+                    name: "name", title: "Name", sortable: true, width: '23%', align: 'center', filtertype: 'dropdown',
+                    filterdatas: [{ text: "10", value: "10" }, { text: "56", value: "56" }, { text: "40", value: "40" }]
+                },
+                { name: "date", title: "Date", sortable: true, width: '23%', align: 'center', format: [{ date: 'MM/dd/yyyy' }], filtertype: 'date' },
+                { name: "name", title: "Edit", template: "gridEditT", width: '23%', align: 'center' }],
+            PageSizes: [10, 20, 50, 100],
+            Selectable: true,
+            ShowPaginationNumber:18,
+            Pageable: true,
+            HeaderFilterable:true
+        };
+
+        $scope.onGridSearch = function () {
+            $scope.setNGGridPage(0);
+            getPageData();
+        }
+
+        $scope.onGridPageSizeChange = function () {
+            getPageData();
+        }
+
+        $scope.onGridPageChange = function () {
+            getPageData();
+        }
+
+        $scope.onGridRowSelected = function (item) {
+            //the click handler runs "outside" of Angular, so you need to call scope.$apply()
+        }
+
+        $scope.onGridLoad = function () {
+            getPageData();
+        }
+
+        var getPageData = function () {
+            $http.get("/app/GetGridSampleData_Page", { params: { pageSize: $scope.getNGGridPageSize(), pageIndex: $scope.getNGGridPage(), keyWord: $scope.getNGGridSearchModel() } }).success(
+                function (data) {
+                    $scope.setNGGridTotals(data.totalrecords);
+                    $scope.setNGGridPageItems(data.data);
+                });
+        }
+
+        $scope.delete = function (id) {
+            alert(id);
+        }
+        $scope.edit = function (item) {
+            alert(item.name);
+        }
+
+        $scope.check = function () {
+            alert("Item has checked " + $scope.getNGGridCheckedItems().length + " " + angular.toJson($scope.getNGGridCheckedItems()));
+        }
+        $scope.select = function () {
+            alert("Currently selected" + angular.toJson($scope.getNGGridSelectedItem()));
+        }
+
+    }]);
+
+    RBUIApp.controller("GridNoPageController", ["$scope", "$http", function ($scope, $http) {
+
+        $scope.searchModel = { input: "" };
+
+        $scope.gridOptions = {
+            columns: [{ name: "id", title: "Id", sortable: true }, { name: "name", title: "Name", sortable: true }],
+            Selectable: true
+        };
+
+        $scope.searchSubmit = function () {
+            getPageData();
+        }
+        $scope.onGridLoad = function () {
+            getNoPageData();
+        }
+
+        var getNoPageData = function () {
+            //$http.get("/app/GetGridSampleData", { params: { keyWord: $scope.searchModel.input } }).success(
+            //    function (data) {
+            //        $scope.setNGGridPageItems(data);
+            //    });
+        }
+    }]);
+
+</script>

@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accela.RBUI", "Accela.RBUI\Accela.RBUI.csproj", "{4B447524-6A84-4548-83DD-9A9B2D49C7A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accela.RBUI.Tests", "Accela.RBUI.Tests\Accela.RBUI.Tests.csproj", "{0ABFA942-3183-4E4F-9D46-2FC690A26446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accela.RBUI.CommonLib", "Accela.RBUI.CommonLib\Accela.RBUI.CommonLib.csproj", "{52095BF1-FFE7-4C00-A6D1-2571EC2122BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4D858F5F-B246-4C3B-ACFD-B5E1CD7D40E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accela.RBUI.JSTests", "Accela.RBUI.JSTests\Accela.RBUI.JSTests.csproj", "{85AD3236-582F-4106-9DBE-D9AB8FCDFF87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accela.RBUI.Diagnostics", "Accela.RBUI.Diagnostics\Accela.RBUI.Diagnostics.csproj", "{9F2FD127-D84D-4DB2-9E76-A778660C0E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accela.RBUI.AzureStorage", "Accela.RBUI.AzureStorage\Accela.RBUI.AzureStorage.csproj", "{3E4ADE88-9868-41A1-832C-5957075AAD37}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B447524-6A84-4548-83DD-9A9B2D49C7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B447524-6A84-4548-83DD-9A9B2D49C7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B447524-6A84-4548-83DD-9A9B2D49C7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B447524-6A84-4548-83DD-9A9B2D49C7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABFA942-3183-4E4F-9D46-2FC690A26446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABFA942-3183-4E4F-9D46-2FC690A26446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABFA942-3183-4E4F-9D46-2FC690A26446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABFA942-3183-4E4F-9D46-2FC690A26446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52095BF1-FFE7-4C00-A6D1-2571EC2122BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52095BF1-FFE7-4C00-A6D1-2571EC2122BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52095BF1-FFE7-4C00-A6D1-2571EC2122BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52095BF1-FFE7-4C00-A6D1-2571EC2122BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85AD3236-582F-4106-9DBE-D9AB8FCDFF87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85AD3236-582F-4106-9DBE-D9AB8FCDFF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85AD3236-582F-4106-9DBE-D9AB8FCDFF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85AD3236-582F-4106-9DBE-D9AB8FCDFF87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2FD127-D84D-4DB2-9E76-A778660C0E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2FD127-D84D-4DB2-9E76-A778660C0E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2FD127-D84D-4DB2-9E76-A778660C0E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2FD127-D84D-4DB2-9E76-A778660C0E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E4ADE88-9868-41A1-832C-5957075AAD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E4ADE88-9868-41A1-832C-5957075AAD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E4ADE88-9868-41A1-832C-5957075AAD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E4ADE88-9868-41A1-832C-5957075AAD37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0ABFA942-3183-4E4F-9D46-2FC690A26446} = {4D858F5F-B246-4C3B-ACFD-B5E1CD7D40E6}
+		{85AD3236-582F-4106-9DBE-D9AB8FCDFF87} = {4D858F5F-B246-4C3B-ACFD-B5E1CD7D40E6}
+	EndGlobalSection
+EndGlobal

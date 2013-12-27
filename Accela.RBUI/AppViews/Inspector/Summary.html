@@ -1,0 +1,75 @@
+﻿<!-- pin start -->
+<div class="pin-main">
+    <div class="pin-top">
+        <div class="pin-title">
+            <!--<span class="pin-lock">
+                <img src="../../Images/Inspector/lock.png" alt="lock" />
+            </span>-->
+            <span class="display-ellipsis summary-type" title="{{inspection.type.text}}">
+                <span ng-bind="inspection.type.text"></span>
+            </span>
+            <span class="arial-11 summary-inspection-desc"><span ng-bind="record.type.display"></span><span ng-bind="inspection.recordId.customId"></span></span>
+        </div>
+    </div>
+    <div class="pin-bottom">
+        <div class="pin-menu row">
+            <div ng-include src="'/AppViews/Inspector/Pin.html'" style="padding: 0px !important; float: left"></div>
+            <div class="action-title asap-16-b"><span ng-bind="actionTtitle"></span></div>
+        </div>
+    </div>
+</div>
+<!-- pin end -->
+<script type="text/javascript">
+    $(".pin-main").inspectionPin();
+</script>
+
+<div class="summary-main table-responsive">
+    <!-- summary -->
+    <table>
+        <tr>
+            <td class="col-sm-3 arial-11 border-right heder-col-first">
+                <p class="asap-16-b inspection-statu" title="class=[asap-16-b]">
+                    <span ng-bind="inspection.status.text"></span>
+                </p>
+                <p title="class=[arial-11]">
+                    <span ng-bind="inspection.scheduleDate | date:'MM/dd/yyyy'"></span>
+                </p>
+                <p title="class=[arial-11]">
+                   <span ng-bind="inspection.scheduleStartTime"></span>
+                   <span ng-bind="inspection.scheduleStartAMPM"></span>
+                </p>
+            </td>
+            <td class="col-sm-3 border-right header-col">
+                <p>
+                    <span class="glyphicon glyphicon-bookmark customid-icon"></span>
+                    <span class="arial-11-b" ng-bind="inspection.recordId.customId"></span>
+                </p>
+                <p class="split-hr"></p>
+                <p>
+                    <img src="../../Images/Inspector/type-icon.png" class="inspection-type-icon" />
+                    <span class="arial-11-b" ng-bind="record.type.display"></span>
+                </p>
+            </td>
+
+            <td class="col-sm-3 arial-11 border-right header-col">
+                <p>
+                    <span class="glyphicon glyphicon-map-marker map-icon"></span>
+                    <span class="inspection-address asap-10-b" ng-bind="address">&nbsp;</span>
+                </p>
+            </td>
+            <td class="col-sm-3 arial-11 header-col">
+                <p>
+                    <span class="glyphicon glyphicon-user contact-icon"></span>
+                    <span class="asap-10-b" ng-bind="Language.Label.InspectionSummary_InspectionContact"></span>
+                </p>
+                <p>
+                    <span ng-bind="inspection.contact.fullName"></span>
+                </p>
+                <p>
+                    <span ng-bind="inspection.contact.phoneNumber1"></span>
+                </p>
+            </td>
+        </tr>
+
+    </table>
+</div>

@@ -1,0 +1,33 @@
+﻿<div class="row">
+    <div class="info-div">
+        <div class="alert alert-info alert-dismissable col-sm-12">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span>2 matches found. Please select the best match or matches and click Add Selected.</span>
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <tr ng-repeat="item in list">
+            <td class="col-sm-1 text-center">
+                <input type="checkbox" />
+            </td>
+            <td class="col-sm-5">
+                <ul class="list-unstyled">
+                    <li ng-bind="item.col1"></li>
+                    <li ng-bind="item.col2"></li>
+                    <li ng-bind="item.col3"></li>
+                    <li ng-bind="item.col4"></li>
+                    <li ng-bind="item.col5"></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="row">
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-default btn-sm" ng-click="seletedApplicants(true);">
+            <span>Add Selected</span>
+        </button>
+    </div>
+</div>

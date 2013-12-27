@@ -1,0 +1,58 @@
+﻿<link rel="stylesheet" href="../../../Content/app/summay-recorddetails.css" type="text/css" />
+<div ng-controller="RecordDetailsCtrl">
+    <div class="row summary-detail">
+        <div class="summary-hearder-div">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="asap-16-b header-title" ng-bind="Language.Label.RecordDetails_RecordDetails"></span>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive table-fix">
+            <table class="table">
+                <tr class="detail-tr">
+                    <td class="col-md-4 asap-12-b">
+                        <span ng-bind="Language.Label.RecordDetails_Condition" class="font-blue"></span>
+                    </td>
+                    <td class="col-sm-8">
+                        <!--
+                        <div class="row">
+                            Lock[API]
+                        </div>
+                        <div class="row">
+                            <span ng-bind="record.status.value"></span>&nbsp;<span ng-bind="record.statusDate  | date:'MM/dd/yyyy'"></span>
+                        </div>
+                        -->
+                    </td>
+                </tr>
+                <tr class="detail-tr">
+                    <td class="col-sm-4 asap-12-b">
+                        <span ng-bind="Language.Label.RecordDetails_ApplicationInfo"></span>
+                    </td>
+                    <td class="col-sm-8 arial-11">
+                        <p ng-repeat="item in typeCategorys">
+                            <a ng-bind="item">&gt;</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="detail-tr">
+                    <td class="col-sm-4 asap-12-b">
+                        <span ng-bind="Language.Label.RecordDetails_ConditionsApproval"></span>
+                    </td>
+                    <td class="col-sm-8 arial-11">
+                        <a ng-bind="Language.Label.RecordDetails_View"></a>
+                    </td>
+                </tr>
+                <tr class="detail-tr">
+                    <td class="col-sm-4 asap-12-b">
+                        <span ng-bind="Language.Label.RecordDetails_Fees"></span>
+                    </td>
+                    <td class="col-sm-8 arial-11">
+                        <a><span ng-bind="Language.Label.RecordDetails_BalanceDue"></span>&nbsp;<span ng-bind="record.balance"></span> &gt;</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>

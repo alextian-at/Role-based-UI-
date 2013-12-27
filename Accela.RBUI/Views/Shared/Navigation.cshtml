@@ -1,0 +1,117 @@
+﻿<div class="subnavbar" ng-controller="CreateMenuCtrl">
+    <div class="subnavbar-inner">
+        <div class="container">
+            <div class="row btn subnav-toggle" data-toggle="collapse" data-target=".subnav-collapse">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
+                        <span ng-show="NavTitle.length>0">{{NavTitle}}</span>
+                </div>
+                <div class="col-xs-4 text-right"><i class="fa fa-bars icon"></i>   </div>
+            </div>
+
+            <div class="collapse subnav-collapse" role="navigation">
+                <ul class="mainnav">
+                    <li ng-class="{active:isCurrentPath('/MyDashboard',Language.Label.Navigation_Dashboard)}">
+                        <a href="#/MyDashboard" class="parent-click-collapse">
+                            <span ng-bind="Language.Label.Navigation_Dashboard"></span>
+                            <span class="click-collapse" data-toggle="collapse" data-target=".subnav-collapse"></span>
+                        </a>
+                    </li>
+                    <li ng-class="{active:isCurrentPath('/Permits',Language.Label.Navigation_Permits)}">
+                        <a href="#/Permits" class="parent-click-collapse">
+                            <span ng-bind="Language.Label.Navigation_Permits"></span>
+                            <span class="click-collapse" data-toggle="collapse" data-target=".subnav-collapse"></span>
+                        </a>
+                    </li>
+                    <li ng-class="{active:isCurrentPath('/Inspections',Language.Label.Navigation_Inspections)}">
+                        <a href="#/Inspections" class="parent-click-collapse">
+                            <span ng-bind="Language.Label.Navigation_Inspections"></span>
+                            <span class="click-collapse" data-toggle="collapse" data-target=".subnav-collapse"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><span ng-bind="Language.Label.Navigation_Payments"></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><span ng-bind="Language.Label.Navigation_Location"></span></a>
+                    </li>
+                    <li class="hidden-sm">
+                        <a href="javascript:;">
+                            <span ng-bind="Language.Label.Navigation_People"></span>
+                        </a>
+                    </li>
+                    <li class="hidden-sm">
+                        <a href="javascript:;">
+                            <span ng-bind="Language.Label.Navigation_Documments"></span>
+                        </a>
+                    </li>
+                    <li class="hidden-sm">
+                        <a href="javascript:;">
+                            <span ng-bind="Language.Label.Navigation_Reports"></span>
+                        </a>
+                    </li>
+                    <li class="hidden-sm">
+                        <a href="javascript:;">
+                            <span ng-bind="Language.Label.Navigation_GIS"></span>
+                        </a>
+                    </li>
+                    <li class="dropdown visible-sm">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <span ng-bind="Language.Label.Navigation_People"></span>
+                            <li><a href="javascript:void(0);"><span ng-bind="Language.Label.Navigation_Documments"></span></a></li>
+                            <li><a href="javascript:void(0);"><span ng-bind="Language.Label.Navigation_Reports"></span></a></li>
+                            <li><a href="javascript:void(0);"><span ng-bind="Language.Label.Navigation_GIS"></span></a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="nav navbar-nav navbar-right hidden-xs">
+                    <div class="btn-group">
+                        <button class="btn btn-primary dropdown-toggle btn-createnew" type="button" data-toggle="dropdown">
+                            <span ng-bind="Language.Label.CreateMenu"></span>
+                            <i class="glyphicon glyphicon-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a class="cursor-pointer" href="#/Intake"><span ng-bind="Language.Label.CreateMenu_Permit"></span></a></li>
+                            <li><a data-toggle="modal" ng-click="OpenCreateModal();" class="cursor-pointer"><span ng-bind="Language.Label.CreateMenu_Inspection"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.subnav-collapse -->
+        </div>
+    </div>
+    <div class="container visible-xs subnavbar-parts">
+        <form class="subnavbar-form" role="search">
+            <div class="search-group">
+                <input type="text" class="form-control search-query" placeholder="Search for...">
+                <div class="btn-group search-condition">
+                    <button class="btn btn-condition dropdown-toggle" data-toggle="dropdown"><span ng-bind="Language.Label.GlobalSearch_Permits"></span> <i class="glyphicon glyphicon-chevron-down"></i></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:;" class="cursor-default"><span ng-bind="Language.Label.GlobalSearch_Permits"></span></a></li>
+                        <li><a href="javascript:;" class="cursor-default"><span ng-bind="Language.Label.GlobalSearch_Location"></span></a></li>
+                        <li><a href="javascript:;" class="cursor-default"><span ng-bind="Language.Label.GlobalSearch_People"></span></a></li>
+                    </ul>
+                </div>
+                <button type="submit" class="btn btn-default btn-search">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </div>
+        </form>
+        <div class="subnavbar-right">
+            <div class="btn-group">
+                <button class="btn btn-primary dropdown-toggle btn-createnew" type="button" data-toggle="dropdown">
+                    <span ng-bind="Language.Label.CreateMenu"></span>
+                    <i class="glyphicon glyphicon-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu float-right" role="menu">
+                    <li><a class="cursor-pointer" href="#/Intake"><span ng-bind="Language.Label.CreateMenu_Permit"></span></a></li>
+                    <li><a data-toggle="modal" ng-click="OpenCreateModal();" class="cursor-pointer"><span ng-bind="Language.Label.CreateMenu_Inspection"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div ng-include src="'/AppViews/Inspector/CreateNew.html'"></div>
+    <div ng-include src="'/AppViews/Inspector/LookUpPermitID.html'"></div>
+</div>

@@ -1,0 +1,55 @@
+﻿<div class="form-group row">
+    <label class="col-lg-3 control-label" ng-bind="Language.Label.CreateNew_Scheduled_Date_Time"></label>
+    <div class="col-lg-4" ng-class="{'has-error':createInspectionFrm.scheduleDate.$invalid}">
+        <span class="control-label" ng-bind="Language.Label.CreateNew_Scheduled_Date"></span>
+        <div class="input-group">
+            <input type="text" class="form-control calendar-style" datepicker-popup="MM/dd/yyyy" required name="scheduleDate" is-open="datepicker.opened" ng-model="inspection.scheduleDate" />
+            <span class="input-group-addon cursor-pointer" ng-click="open()"><i class="glyphicon glyphicon-calendar cursor-pointer"></i></span>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <span class="control-label" ng-bind="Language.Label.CreateNew_Scheduled_Time"></span>
+        <div ng-model="inspection.scheduleTime" ng-class="{'has-error':createInspectionFrm.scheduleTime.$invalid}" name="scheduleTime" required>
+            <timepicker hour-step="1" minute-step="15" show-meridian="!ismeridian"></timepicker>
+        </div>
+    </div>
+</div>
+<div class="form-group row" ng-class="{'has-error':createInspectionFrm.Inspector.$invalid}">
+    <label class="col-lg-3 control-label" ng-bind="Language.Label.CreateNew_Inspector"></label>
+    <div class="col-lg-4">
+        <div class="input-group dropdown ng-scope">
+            <input type="text" name="Inspector" class="form-control input-clear" required ng-model="inspection.inspectorId" typeahead="inspector for inspector in inspectors | filter:$viewValue | limitTo:8" placeholder="Inspector" />
+            <ul class="dropdown-menu">
+                <li ng-repeat="inspector in inspectors"><a href="javascript:void(0);" ng-click="changeInspector(inspector)">{{inspector}}</a></li>
+            </ul>
+            <span class="input-group-addon cursor-pointer dropdown-toggle"><i class="glyphicon glyphicon-search"></i></span>
+            
+        </div>        
+    </div>
+</div>
+<div class="form-group row" ng-class="{'has-error':createInspectionFrm.SchedulingNotes.$invalid}">
+    <label class="col-lg-3 control-label" ng-bind="Language.Label.CreateNew_Scheduling_Notes"></label>
+    <div class="col-lg-5"></div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-8">
+        <textarea class="form-control" name="SchedulingNotes" required ng-model="inspection.requestComment" rows="3"></textarea>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-lg-3 control-label" ng-bind="Language.Label.CreateNew_Inspection_Contact"></label>
+    <div class="col-lg-2">
+        <input type="text" class="form-control" ng-model="inspection.contact.firstName" placeholder="{{Language.Label.CreateNew_Inspection_Contact_FirstName}}" />
+    </div>
+    <div class="col-lg-2">
+        <input type="text" class="form-control" ng-model="inspection.contact.middleName" placeholder="{{Language.Label.CreateNew_Inspection_Contact_MiddleName}}" />
+    </div>
+    <div class="col-lg-2">
+        <input type="text" class="form-control" ng-model="inspection.contact.lastName" placeholder="{{Language.Label.CreateNew_Inspection_Contact_LastName}}" />
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-lg-3 control-label" ng-bind="Language.Label.CreateNew_Contact_Phone_Number"></label>
+    <div class="col-lg-3">
+        <input type="text" class="form-control" ng-model="inspection.contact.phoneNumber1" placeholder="0-000-000-0000" />
+    </div>
+</div>

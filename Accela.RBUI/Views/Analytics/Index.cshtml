@@ -1,0 +1,17 @@
+﻿@using System.Configuration;
+@{
+    string piwikUrl = ConfigurationManager.AppSettings["Piwik_Url"].ToString();
+    string siteId = ConfigurationManager.AppSettings["Piwik_SiteId"].ToString();
+    string piwik_token = ConfigurationManager.AppSettings["Piwik_Token_auth"].ToString();
+    string srcUrl = "http://" + piwikUrl + "index.php?module=Widgetize&action=iframe&moduleToWidgetize=VisitsSummary&token_auth=" + piwik_token + "&actionToWidgetize=index&idSite=" + siteId + "&period=day&date=today&disableLink=1&widget=1";
+}
+<div class="main">
+    <div class="container">
+        <h4>Web Analytics</h4>
+        <div style="text-align: center">
+            <iframe src="@srcUrl" frameborder="0" marginheight="0" marginwidth="0" width="960" height="800"></iframe>
+        </div>
+    </div>
+</div>
+
+

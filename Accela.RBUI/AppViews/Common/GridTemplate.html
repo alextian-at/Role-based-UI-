@@ -1,0 +1,100 @@
+﻿<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th class="{{col.name}} headerSortDown" ng-repeat=" col in gridOptions.columns " ng-hide="col.headerhide" ng-click="sort_by(col.name,col.sortable)" ng-style="{width:col.width,'text-align':col.headerAlign}" colspan="{{col.colspan}}">
+                <span ng-switch on="col.checkboxcolumn">
+                    <span ng-switch-when="true">
+                        <input type="checkbox" ng-model="Grid.CheckAllBool" ng-change="Grid.CheckAll()" />
+                    </span>
+                    <span ng-switch on="col.headertempleate.length>0">
+                        <span ng-switch-when="true" ng-include="col.headertempleate"></span>
+                        <span ng-switch-default>{{col.title}}&nbsp;<a ng-show="col.sortable" style="float: right"><i class="glyphicon glyphicon-sort"></i></a>
+                        </span>
+                    </span>
+                </span>
+            </th>
+        </tr>
+        <tr ng-show="gridOptions.HeaderFilterable">
+            <th ng-repeat=" col in gridOptions.columns ">
+                <div ng-switch on="col.filtertype.length>0">
+                    <div ng-switch-when="true" ng-include="col.filtertype+'TmplGrid'"></div>
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tfoot ng-show="gridOptions.Pageable">
+        <td colspan="{{gridOptions.columns.length}}">
+            <div class="" style="float: left" ng-show="Grid.TotalPages>1">
+                <ul class="pagination pagination-sm" style="margin: 0px !important;">
+                    <li ng-class="{disabled: Grid.CurrentPage == 0}">
+                        <a href ng-click="firstPage()">First</a>
+                    </li>
+                    <li ng-class="{disabled: Grid.CurrentPage == 0}">
+                        <a href ng-click="prevPage()">« Prev</a>
+                    </li>
+                    <li ng-repeat="n in range(Grid.Pagination.startPoint,Grid.Pagination.endPoint)"
+                        ng-class="{active: n == Grid.CurrentPage}"
+                        ng-click="setPage(n)">
+                        <a href ng-bind="n + 1">1</a>
+                    </li>
+                    <li ng-class="{disabled: Grid.CurrentPage == Grid.TotalPages - 1}">
+                        <a href ng-click="nextPage()">Next »</a>
+                    </li>
+                    <li ng-class="{disabled: Grid.CurrentPage == Grid.TotalPages  - 1}">
+                        <a href ng-click="lastPage()">Last</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="float: left; margin-left: 10px;">
+                <label>
+                    Showing {{Grid.CurrentPage+1}} of {{Grid.TotalPages}} entries &nbsp;
+                     <div class="btn-group">
+                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" style="padding-left: 15px;">
+                             {{Grid.PageSize}}&nbsp;<span class="caret"></span>
+                         </button>
+                         <ul class="dropdown-menu" role="menu">
+                             <li ng-repeat=" size in gridOptions.PageSizes "><a ng-click="setPageSize(size)">{{size}}</a></li>
+                         </ul>
+                     </div>
+                    records per page
+                </label>
+            </div>
+        </td>
+    </tfoot>
+    <tbody>
+        <!-- <tr ng-show="Grid.DataLoading"><td colspan="{{gridOptions.columns.length}}" style="text-align:center">
+            <span style="margin:0 auto;"><img src="/images/loading.gif"/></span>
+            </td></tr>-->
+        <tr ng-repeat="item in Grid.PageItems | orderBy:Grid.sortingOrder:Grid.reverse" ng-click="Grid.SelectItemFunc(item);" ng-class="{selected:Grid.SelectedItem==item}">
+            <td ng-repeat="col in gridOptions.columns" ng-switch on="col.checkboxcolumn" ng-style="{'text-align':col.align}">
+                <div ng-switch-when="true">
+                    <input type="checkbox" ng-model="item.checked" ng-change="setCheckedItem(item)" stop-event="click" />
+                </div>
+                <div ng-switch-default ng-switch on="col.template.length>0">
+                    <div ng-switch-when="true" ng-include="col.template">
+                    </div>
+                    <div ng-switch-default>
+                        {{FormatValue(item,col.name,col.format)}}
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script type="text/ng-template" id="textboxTmplGrid">
+    <form ng-submit="Grid.SearchSubmit()">
+     <input type="text" class="form-control" ng-model="Grid.SearchModel[col.name]" />
+    <form>
+</script>
+<script type="text/ng-template" id="dateTmplGrid">
+    <div class="input-group">        
+ <input type="text" class="form-control dateinput" datepicker-popup="MM/dd/yyyy" ng-model="Grid.SearchModel[col.name]"  />  
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+         </div>
+</script>
+<script type="text/ng-template" id="dropdownTmplGrid">
+    <select class="form-control" ng-model="Grid.SearchModel[col.name]" ng-change="Grid.SearchSubmit()">
+    <option></option>
+                    <option ng-repeat=" d in col.filterdatas " value="{{d.value}}">{{d.text}}</option>
+    </select>
+</script>

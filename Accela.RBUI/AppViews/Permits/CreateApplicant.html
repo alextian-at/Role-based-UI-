@@ -1,0 +1,117 @@
+﻿<form role="form" name="formApplicant" class="form-horizontal" id="formApplicant">
+    <div class="form-group">
+        <label class="col-sm-2 control-label"><span class="pull-left">Contact Type:</span></label>
+        <div class="col-sm-2">
+            <input type="radio" value="Individual" /><span>Individual</span>
+        </div>
+        <div class="col-sm-3">
+            <input type="radio" value="Organization" /><span>Organization</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label"><span class="pull-left">Type</span></label>
+        <label class="col-sm-2 control-label"><span class="pull-left">Primary</span></label>
+        <label class="col-sm-4 control-label"><span class="pull-left">Birth Date</span></label>
+        <label class="col-sm-2 control-label"><span class="pull-left">Gender</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-4">
+            <select class="form-control">
+                <option>Applicant</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <select class="form-control">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <div class="input-group">
+                <input type="text" class="form-control calendar-style" datepicker-popup="MM/dd/yyyy" name="BirthDate" ng-model="birthDate" />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <select class="form-control">
+                <option>Female</option>
+                <option>Male</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label"><span class="pull-left">First Name</span></label>
+        <label class="col-sm-3 control-label"><span class="pull-left">Middle Name</span></label>
+        <label class="col-sm-6 control-label"><span class="pull-left">Last Name</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-3">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-12 control-label"><span class="pull-left">Organization Name</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            <input type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-12 control-label"><span class="pull-left">Email</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12" ng-class="{'has-error':formApplicant.applicantEmail.$invalid}">
+            <input type="email" name="applicantEmail" class="form-control" ng-model="email" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label"><span class="pull-left">Home Phone</span></label>
+        <label class="col-sm-3 control-label"><span class="pull-left">Mobile Phone</span></label>
+        <label class="col-sm-3 control-label"><span class="pull-left">Business Phone</span></label>
+        <label class="col-sm-3 control-label"><span class="pull-left">Preferred Channel</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-3">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-3">
+            <select class="form-control">
+                <option>Select</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label"><span class="pull-left">SSN</span></label>
+        <label class="col-sm-3 control-label"><span class="pull-left">FEIN</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-3">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="modal-footer">
+        <div class="form-group pull-right">
+            <button type="button" class="btn btn-default" ng-click="" data-dismiss="modal"><span ng-bind="Language.MessageBox.ActionMsg_Cancel"></span></button>
+            <button type="button" class="btn btn-primary" ng-click="" ng-disabled="formApplicant.$invalid"><span ng-bind="Language.MessageBox.ActionMsg_SaveChanges"></span></button>
+        </div>
+    </div>
+
+</form>

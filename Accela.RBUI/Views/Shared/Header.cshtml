@@ -1,0 +1,24 @@
+﻿<nav class="navbar" role="navigation" id="header">
+    <div class="container">
+        <div class=" navbar-default">
+            <div class="navbar-header">
+                <h1><a class="navbar-brand" href="javascript:;" ng-bind="Language.Label.Header_Brand"></a></h1>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                @Html.Partial("GlobalSearch")
+                <ul class="nav navbar-nav navbar-right user-nav visible-lg">
+                    <li class="dropdown">
+                        @Html.Partial("CurrentUser")
+                    </li>
+                    <li>
+                        <span>Tuesday</span>
+                        <a>Nov 16, 2013</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+@Html.Partial("Navigation")

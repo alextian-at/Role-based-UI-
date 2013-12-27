@@ -1,0 +1,58 @@
+﻿@using System.Configuration;
+@{
+    string piwikUrl = ConfigurationManager.AppSettings["Piwik_Url"].ToString();
+    string siteId = ConfigurationManager.AppSettings["Piwik_SiteId"].ToString();
+}
+<footer class="center container-background">
+
+    <div class="container bs-footer">
+        <ul class="footer-links">
+            <li>
+                @*<img alt="footerLogo" src="~/Images/Layout/footerLogo.png" /></li>*@
+                <i class="footerLogo"></i>
+                <li class="muted">&nbsp;</li>
+            <li><a href="javascript:void(0);">&copy; @DateTime.Now.Year Accela</a></li>
+            <li class="muted">&nbsp;</li>
+            <li><a href="http://engage.accela.com/Contactus.html"><span ng-bind="Language.Label.Footer_Contact"></span></a></li>
+            <li class="muted">&nbsp;</li>
+            <li><a href="http://www.accela.com/company"><span ng-bind="Language.Label.Footer_Company"></span></a></li>
+            <li class="muted">&nbsp;</li>
+            <li><a href="#/Analytics"><span ng-bind="Language.Label.Footer_Analytics"></span></a></li>
+            <li class="muted">&nbsp;</li>
+            <li>
+                <div class="btn-group">
+                    <a href="#"><span class="dropdown-toggle" ng-bind="Language.Label.Footer_More"></span>
+                        <span class="caret"></span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+
+    (function () {
+        var u = (("https:" == document.location.protocol) ? "https" : "http") + "://" + "@piwikUrl";
+        _paq.push(["setTrackerUrl", u + "piwik.php"]);
+        _paq.push(["setSiteId", "@siteId"]);
+        var d = document, g = d.createElement("script"), s = d.getElementsByTagName("script")[0]; g.type = "text/javascript";
+        g.defer = true; g.async = true; g.src = "/Scripts/CommonJs/Piwik/Piwik.js"; s.parentNode.insertBefore(g, s);
+    })();
+</script>
+<!-- End Piwik Code -->
+
+<noscript>
+    <p>
+        @{
+            string srcUrl = "http://" + piwikUrl + "piwik.php?idsite=" + siteId + "&amp;rec=1";
+        }
+        <!-- Piwik Image Tracker -->
+        <img src="@srcUrl" style="border: 0" alt="" />
+        <!-- End Piwik -->
+    </p>
+</noscript>

@@ -1,0 +1,21 @@
+﻿<link rel="stylesheet" type="text/css"  href="/Content/app/relatedinspections.css" />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-margin text-left">
+            <tr>
+                <td>FileName</td>
+                <td>Date</td>
+                <td>Type</td>
+                <td>Description</td>
+                <td>Delete</td>
+            </tr>
+            <tr ng-repeat="item in recordList | filter:resultinspection.Store.value">
+                <td><a target="_blank" href="/App/DownLoadDocument?documentid={{item.id}}">{{item.fileName}}</a></td>
+                <td>{{item.uploadedDate | date:"MM/dd/yyyy"}}</td>
+                <td>{{item.type}}</td>
+                <td>{{item.description}}</td>
+                <td><a href="javascript:void(0);" ng-click="ConfirmDeleteDocument(item.id);">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

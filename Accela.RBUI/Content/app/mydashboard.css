@@ -1,0 +1,382 @@
+﻿.recently-viewed-border {
+    border-radius: 0px;
+    background-color: #FAFAFA;
+    border: 0px;
+}
+
+.inspections-margin {
+    margin: 30px 30px 30px 30px;
+}
+
+.mydashboard-title {
+    margin-left: 25px;
+}
+
+.mydashboard-panel {
+    border-radius: 0px;
+    background-color: #FAFAFA;
+}
+
+.mydashboard-sortby {
+    color: #03A3F8;
+}
+
+.mydashboard-col-padding 
+{
+     padding:0px;padding-left:5px;
+}
+
+.summary-hearder-margin {
+    margin-top: 25px;
+}
+
+.mydashboard-inspection-address {
+    font-size: 1.2em;
+}
+
+.mydashboard-inspection-display {
+    font-size: 1.1em;
+}
+
+.mydashboard-inspection-type {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.mydashboard-disable-img {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);	
+    filter: gray;
+    -moz-opacity:.1;
+    opacity:0.5;
+}
+
+
+.mydashboard-inspection-Scheduled {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.mydashboard-inspection-scheduleDate {
+    font-size: 1.1em;
+}
+
+.mydashboard-task-count {
+    font-size: 1.6em;
+}
+
+.mydashboard-inspectionlist {
+    background-color: #FFFFFF;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.mydashboard-address {
+    border: 1px solid #E3E3E3;
+    border-bottom: 0px;
+    height: 90px;
+    padding-top: 10px;
+}
+
+.mydashboard-tablelist-scroll
+{
+    margin-right:10px;
+}
+
+.mydashboard-tablelist-address {
+    min-width: 10px;
+    height: 120px;
+    border: 1px solid #E3E3E3;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    padding-top: 22px;
+}
+
+.summary-viewinspection
+{
+   padding-right:20px;
+}
+
+.mydashboard-inspectiontype {
+    border: 1px solid #E3E3E3;
+    border-bottom: 0px;
+    height: 49px;
+    padding-top: 10px;
+}
+
+
+/*font style*/
+.mydashboard-tablelist-address .mydashboard-address-display,.mydashboard-address .mydashboard-address-display{
+    width: 230px;
+}
+
+.mydashboard-tablelist-address .mydashboard-address-icon,.mydashboard-address .mydashboard-address-icon{
+    vertical-align: top;
+}
+
+.mydashboard-tablelist-address .mydashboard-address-display a, .mydashboard-address .mydashboard-address-display a {
+    font-family: "Asap Bold";
+    font-size: 16px;
+    line-height: 20px;
+    color: #3399cc;
+}
+
+.mydashboard-tablelist-address .mydashboard-address-id, .mydashboard-address .mydashboard-address-id {
+    font-family: "Asap Bold";
+    font-size: 14px;
+    line-height: 22px;
+    color: #999999;
+}
+
+.mydashboard-inspectiontype .mydashboard-inspectiontype-display {
+    font-family: "Asap Bold";
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.mydashboard-tablelist-permittype .mydashboard-permittype-display, .mydashboard-permittype .mydashboard-permittype-display {
+    font-family: "Asap";
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+}
+
+
+.mydashboard-Contact .mydashboard-Contact-title, .mydashboard-Contact .mydashboard-Contact-phonenumber, .mydashboard-Contact .mydashboard-Contact-name {
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.mydashboard-Contact .mydashboard-Contact-title {
+    font-family: "Asap";
+}
+
+.mydashboard-Contact .mydashboard-Contact-phonenumber, .mydashboard-Contact .mydashboard-Contact-name {
+    font-family: "Asap Bold";
+}
+
+.mydashboard-tablelist-scheduledate .mydashboard-scheduledate-title, .mydashboard-scheduledate .mydashboard-scheduledate-title {
+    font-family:"Asap Bold";
+    font-size:16px;
+    line-height:27px;
+    color:#333333;
+}
+
+.mydashboard-tablelist-scheduledate .mydashboard-scheduledate-title .active, .mydashboard-scheduledate .mydashboard-scheduledate-title .active {
+    font-family:"Asap";
+    font-size:16px;
+    line-height:27px;
+    color:#FF6600;
+}
+
+.mydashboard-tablelist-scheduledate .mydashboard-scheduledate-display, .mydashboard-scheduledate .mydashboard-scheduledate-display {
+    font-family:"Asap Bold";
+    font-size:22px;
+    line-height:27px;
+    color:#666666;
+}
+/*font style end*/
+
+.icoinspectiontype {
+    color: #82AEB5;
+}
+
+
+.icopermittype {
+    color: #7D5249;
+}
+
+.mydashboard-permittype {
+    border: 1px solid #E3E3E3;
+    height: 49px;
+    padding-top: 10px;
+}
+
+.mydashboard-tablelist-permittype {
+    border: 1px solid #E3E3E3;
+    border-bottom: 0px;
+    height: 60px;
+    padding-top: 17px;
+}
+
+
+.mydashboard-tablelist-inspectiontype {
+    border: 1px solid #E3E3E3;
+    border-bottom: 0px;
+    height: 60px;
+    padding-top: 17px;
+}
+
+
+.mydashboard-scheduledate {
+    min-width: 10px;
+    height: 189px;
+    border: 1px solid #E3E3E3;
+    border-left: 0px;
+}
+
+
+.mydashboard-Contact {
+    min-width: 10px;
+    height: 120px;
+    border: 1px solid #E3E3E3;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+.mydashboard-Contact-margin {
+    margin-top: 13px;
+}
+
+.mydashboard-tablelist-scheduledate {
+    min-width: 10px;
+    height: 120px;
+    border: 1px solid #E3E3E3;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+.tablelist-address-padding {
+    padding-right: 0px;
+}
+
+.mydashboard-tablelist-scrollpading {
+    padding-left: 5px;
+    margin-bottom:8px;
+}
+
+.mydashboard-new {
+    background-color: #77B700;
+    color: white;
+    line-height: 20px;
+    font-size:10px;
+}
+
+.mydashboard-li {
+    width: 25px;
+    padding-right: 4px;
+}
+
+.mydashboard-li2 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.mydashboard-scroll-pane-grid {
+    height: 473px;
+    overflow: auto;
+}
+
+.mydashboard-scroll-pane-map {
+    height: 490px;
+    overflow: auto;
+}
+
+
+.mydashboard-croll-pane-tables {
+    height: 490px;
+    overflow: auto;
+        margin-bottom:9px;
+}
+
+.mydashboard-recentlyviewed {
+    font-size: 1.6em;
+}
+
+.mydashboard-panel-recentlyviewed {
+    height: 300px;
+}
+
+.mydashboard-bulletinboard {
+    font-size: 1.6em;
+}
+
+.mydashboard-calendar {
+    font-size: 1.6em;
+}
+
+.mydashboard-tasklist-right {
+    word-break: break-all;
+    margin-top: 15px;
+}
+
+.mydashboard-tasklist-right-style2 {
+    word-break: break-all;
+    margin-top: 15px;
+    width: 100px;
+}
+
+
+.mydashboard-tasklist-right-style3 {
+    word-break: break-all;
+    margin-top: 15px;
+    width: 100px;
+}
+
+
+
+.dashboard-icon-link > a:link,
+.dashboard-icon-link > a:visited,
+.dashboard-icon-link > a:hover,
+.dashboard-icon-link > a:active {
+    border: solid 1px #dddddd;
+}
+
+.dashboard-a-active {
+    color: #03A3F8;
+    font-weight: bold;
+    text-decoration:underline;
+}
+
+.dashboard-a-disable {
+    color: #03A3F8;
+}
+
+.dashboard-a-margin {
+    margin-left: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.mydashboard-tasklist-button-bg {
+    background-color: #EBEBEB;
+}
+
+.mydashboard-mapDiv {
+    height: 470px;
+}
+
+.mydashboard-summaryDiv {
+    background-color: #fff;
+    height: 470px;
+    border: 3px solid #005384;
+    margin-bottom:14px;
+}
+
+.display-none {
+    display: none;
+}
+
+.scroll-pane-padding {
+    padding-left: 15px;
+    padding-right: 23px;
+}
+
+.grid-scroll-pane-padding {
+    padding-left: 15px;
+    padding-right: 22px;
+}
+
+.scroll-pane-width {
+    width: 437px;
+}
+
+.icosize {
+    font-size: 1.5em;
+}

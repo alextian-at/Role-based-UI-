@@ -1,0 +1,97 @@
+﻿
+<div class="row">
+    <div class="col-sm-12">
+        <div class="widget widget-fix">
+            <div class="widget-header">
+                <h3>PMT-000093</h3>
+                    <div class="buttons">
+                        <div class="icon"><i class="fa fa-question circle"></i></div>
+                        <div class="icon"><i class="glyphicon glyphicon-cog circle"></i></div>
+                    </div>
+            </div>
+            <div class="widget-content main-fix">
+                <div class="inspection-main">
+                    <div ng-include src="'/AppViews/Permits/Summary.html'"></div>
+                    <!-- content -->
+                    <!-- record menu -->
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3 summary-left-layout" id="summary">
+                                <div class="left-btns-area">
+                                    <div ng-include src="'/AppViews/Inspector/Pin.html'"></div>
+                                    <div class="summary-btn-group">
+                                        <button type="button" ng-click="$broadcast('OpenModal', { name: 'ResultInspection', width: '800px', title: 'Result Inspection' });" class="btn btn-default arial-11-b btn-result" title="class=[btn btn-default btn-sm arial-11-b]">
+                                            <span class="icon-font-blue"><b class="glyphicon glyphicon-file"></b></span>
+                                            <span ng-bind="Language.Label.ResultInspection_ResultInspection"></span>
+                                        </button>
+                                        <span class="btn-split">&nbsp;</span>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default dropdown-toggle pull-right summary-action" data-toggle="dropdown" title="class=[btn btn-default btn-sm dropdown-toggle summary-action]">
+                                                <span ng-bind="Language.Label.InspectionSummary_Actions"></span> <span class="glyphicon glyphicon-chevron-down"></span>
+                                            </button>
+                                            <ul class="dropdown-menu pull-right arial-11" role="menu" title="dropdown-menu pull-right arial-11">
+                                                <li>
+                                                    <a data-toggle="modal" ng-click="modalEdit('Reassign','Reassign Inspection','InspectionAction')" class="cursor-pointer">
+                                                        <span ng-bind="Language.Label.InspectionSummary_Reassign">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-toggle="modal" ng-click="modalEdit('Reshedule','Reshedule Inspection','InspectionAction')" class="cursor-pointer">
+                                                        <span ng-bind="Language.Label.InspectionSummary_Reshedule"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-toggle="modal" ng-click="cancel();" class="cursor-pointer">
+                                                        <span ng-bind="Language.Label.InspectionSummary_Cancel"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-toggle="modal" ng-click="createNewDialog('Create New Inspection','Create New Inspection','CreateNew-dialog',800)" class="cursor-pointer">
+                                                        <span ng-bind="Language.Label.InspectionSummary_NewInspection"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="imgMap" class="summary-map">
+                                    <div id="mapDiv" style="width: 100%; height: 140px" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
+                                </div>
+                                <div class="display-area" title="class=[summary-left-layout]">
+                                    <p>
+                                        <b><span ng-bind="Language.Label.InspectionSummary_Created"></span></b>
+                                        <br />
+                                        <span ng-bind="inspection.submitDate | date:'MM/dd/yyyy'"></span>
+                                    </p>
+                                    <p>
+                                        <b><span ng-bind="Language.Label.InspectionSummary_Type"></span></b>
+                                        <br />
+                                        <span ng-bind="record.type.display"></span>
+                                    </p>
+                                    <p>
+                                        <b><span ng-bind="Language.Label.InspectionSummary_Description"></span></b>
+                                        <br />
+                                        <span ng-bind="record.description"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- record details -->
+                            <div ng-include src="menuUrl" class="col-md-9  summary-right-layout"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- /.modal -->
+    </div>
+</div>
+<script type="text/javascript">
+</script>
+<div ng-include src="'/AppViews/Inspector/EditModal.html'"></div>
+<div ng-include src="'/AppViews/Inspector/ResultInspection.html'"></div>
+<div ng-include src="'/AppViews/Inspector/StandardComment.html'"></div>

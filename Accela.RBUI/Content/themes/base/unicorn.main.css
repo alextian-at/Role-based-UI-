@@ -1,0 +1,29 @@
+/*.widget-title, .modal-header, .table th, div.dataTables_wrapper .ui-widget-header,*/ 
+.ui-dialog .ui-dialog-titlebar {
+	background-color: #efefef;
+	background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#fdfdfd), to(#eaeaea));
+	background-image: -webkit-linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    background-image: -moz-linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    background-image: -ms-linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    background-image: -o-linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    background-image: -linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+    border-bottom: 1px solid #CDCDCD;
+    height: 36px;
+}
+
+.ui-dialog {
+	padding: 0;
+}
+.ui-dialog .ui-dialog-title {
+	font-size: 14px;
+	margin: 0px 0px;
+}
+.ui-widget-overlay {
+	position: fixed;
+    z-index:1010;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+	background: transparent url("images/glyphicons-halflings.png") -310px 2px scroll;
+	margin: -15px 0 0;
+}

@@ -1,0 +1,84 @@
+﻿.table-margin
+{
+    margin-top:5px;
+}
+.conditions-title-margin
+{
+    margin-top:20px;margin-bottom:20px;
+}
+
+.h-border
+{
+    border-bottom:solid 1px #dddddd;
+}
+
+.no-border
+{
+    border:0px;
+}
+
+.condition-detatil-margin
+{
+    margin-top:40px;
+}
+.select-style
+{
+    width:15em;
+}
+
+.select-style2
+{
+    width:12em;
+}
+
+.input-style
+{
+    width:15em;
+}
+
+.edit-condition-row
+{
+    margin-top:20px;
+}
+
+.calendar-style
+{
+    width:9em;
+}
+.textarea-label
+{
+    margin-top:1.5em;
+}
+
+.checkbox-label
+{
+    margin-top:1.5em;
+}
+
+.left-panel
+{
+   border: 0px; border-right: solid 1px #dddddd; min-height: 20em;
+}
+
+.last-row
+{
+   margin-top: 20px;
+}
+
+.form-condition-width
+{
+    width:640px;
+}
+.current {
+    float:right;
+    font-size:11px;
+    line-height:18px;
+}
+.condition-dialog a {
+    color: #428bca !important;
+}
+    .condition-dialog a:hover {
+        color: #2a6496 !important;
+    }
+
+

@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Permits Solution Login";
+}
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" @{ if (Session["CurrentLang"] != null && Session["CurrentLang"].ToString() == "ar") { @Html.Raw(" dir = \"rtl\" lang = \"ar\"")   } else { @Html.Raw(" dir=\"ltr\" lang=\"en\" ")   } } ng-app="RBUIApp">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @Scripts.Render("~/bundles/jquery")
+    @{
+        if (Session["CurrentLang"] != null && Session["CurrentLang"].ToString() == "ar")
+        {
+            @Styles.Render("~/Content/bootstrap-rtl")
+            @Scripts.Render("~/bundles/bootstrap-rtl")
+        }
+        else
+        {
+            @Styles.Render("~/Content/bootstrap-ltr")
+            @Scripts.Render("~/bundles/bootstrap-ltr")
+        }
+    }
+
+    @Styles.Render("~/Content/css")
+
+    @{
+        if (Session["CurrentLang"] != null && Session["CurrentLang"].ToString() == "ar")
+        {
+            @Styles.Render("~/Content/site-rtl");
+        }
+    }
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
+    <script src="~/Scripts/App/App.js"></script>
+    <script src="~/Scripts/App/Services/i18nService.js"></script>
+    <script src="~/Scripts/App/Controllers/i18nController.js"></script>
+</head>
+<body class="body-border container" ng-controller="GetResourceCtrl">
+    <header id="rbui-header" class="navbar-default login-nav">
+        <div class="container login-nav-border">
+            <div class="navbar-header col-xs-6">
+                <a class="navbar-brand" href="#">
+                    <img alt="Logo" height="37" width="164" src="~/Images/Layout/logo.png" />
+                </a>
+            </div>
+            <div class="col-xs-6">
+                <ul class="nav float-right navbar-nav">
+                    <li>
+                        <a href="#help">{{Language.Label.Header_Help}}</a>
+                    </li>
+                    <li><a class="seperator">|</a></li>
+                    <li>
+                        <a href="#help">{{Language.Label.Header_Support}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <form name="formLogin" method="post">
+
+        @RenderSection("headers", required: false)
+        <div class="container container-background">
+            @RenderBody()
+        </div>
+        <!-- /page -->
+        <footer class="container-background">
+            @(Html.Partial("Footer"))
+        </footer>
+
+        @RenderSection("scripts", required: false)
+    </form>
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿<div>
+    <div class="btn btn-default btn-sm fileupload-btn" ng-show="isButton">
+        <i class="glyphicon glyphicon-paperclip"></i>
+        <span>Attach Files...</span>
+        <form method="post" enctype="multipart/form-data" id="buttonForm">
+            <input type="file" name="files" id="buttonFile">
+        </form>
+    </div>
+    <div class="p-upload" id="fileDropBox" ng-show="!isButton">
+        <span title="{{Language.Label.Documents_UploadTip}}" ng-bind="Language.Label.Documents_UploadTip"></span>
+        <!-- <a href="javascript:void(0);" onclick="document.getElementById('UploadFile').click();">
+            <span title="{{Language.Label.Documents_ChoosFile}}" ng-bind="Language.Label.Documents_ChoosFile"></span>
+        </a>-->
+        <div class="btn btn-link btn-sm fileupload-btn nopadding" style="padding:0px !important;">
+            <span title="{{Language.Label.Documents_ChoosFile}}" ng-bind="Language.Label.Documents_ChoosFile"></span>
+            <form method="post" enctype="multipart/form-data" id="linkForm">
+                <input type="file" name="files" id="linkFile">
+            </form>
+        </div>
+        <span title="{{Language.Label.Documents_FromComputer}}" ng-bind="Language.Label.Documents_FromComputer"></span>
+    </div>
+    <!-- upload document description -->
+    <div accela-modal="FileUploadModal">
+        <form name="formUpload">
+            <div class="form-group">
+                <ul>
+                    <li ng-repeat=" item in FileUpload.SelectedFiles">{{item}}
+                    </li>
+                </ul>
+            </div>
+               <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4 text-left" ng-class="{'has-error':formUpload.Documentgroup.$invalid}">
+                        <span class="control-label"><span title="{{Language.Label.Documents_DocumentGroup}}" ng-bind="Language.Label.Documents_DocumentGroup"></span></span>
+                        <select name="Documentgroup" class="form-control" ng-model="Documentgroup.value" required ng-change="DocumentGroupChange(Documentgroup.value);">
+                            <option value="" ng-bind="Language.Label.Documents_Select"></option>
+                            <option ng-repeat="group in Groupdata.documentGroups" value="{{group.id}}">{{group.display}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-8"></div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4 text-left" ng-class="{'has-error':formUpload.Documenttype.$invalid}">
+                        <span class="control-label"><span title="{{Language.Label.Documents_DocumentType}}" ng-bind="Language.Label.Documents_DocumentType"></span>[API Data]</span>
+                        <select name="Documenttype" class="form-control" ng-model="Documenttype.value" required>
+                            <option ng-repeat="type in Typedata" value="{{type.value}}">{{type.value}}</option>
+                            <option value="" ng-bind="Language.Label.Documents_Select"></option>
+                        </select>
+                    </div>
+                    <div class="col-md-8"></div>
+                </div>
+
+            </div>
+            <div class="form-group" ng-class="{'has-error':formUpload.Description.$invalid}">
+                <span class="control-label"><span title="{{Language.Label.Documents_Description}}" ng-bind="Language.Label.Documents_Description"></span></span>
+                <textarea class="form-control" name="Description" placeholder="Description" ng-model="FileDescripttion" required rows="3"></textarea>
+                <div class="alert alert-danger" id="DivErrorDescription" ng-show="formUpload.Description.$dirty && formUpload.Description.$invalid"><span title="{{Language.Label.Documents_DescriptionRequired}}" ng-bind="Language.Label.Documents_DescriptionRequired"></span></div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="form-group pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><span title="{{Language.Label.Documents_Cancel}}" ng-bind="Language.Label.Documents_Cancel"></span></button>
+                    <button type="button" class="btn btn-primary" ng-click="FileUploadSubmit();" ng-disabled="formUpload.$invalid"><span title="{{Language.Label.Documents_Upload}}" ng-bind="Language.Label.Documents_Upload"></span></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

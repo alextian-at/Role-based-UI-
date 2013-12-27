@@ -1,0 +1,82 @@
+﻿<div class="row summary-detail">
+    <div class="summary-hearder-div">
+        <div class="row">
+            <div class="col-sm-8">
+                <span class="asap-16-b header-title" ng-bind="Language.Label.InspectionSummary_Summary"></span>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-link link-set pull-right" ng-click="editSchedulingNote()" ng-show="!isEditSchedulingNote">
+                    <span class="icon-font-blue asap-12">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </span>
+                    <span ng-bind="Language.MessageBox.ActionMsg_Edit"></span>
+                </button>
+                <div class="col-sm-8">
+                    <button type="button" class="btn btn-link link-set pull-right" ng-click="cancelSchedulingNote()" ng-show="isEditSchedulingNote">
+                        <span class="icon-font-blue asap-12">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </span>
+                        <span ng-bind="Language.MessageBox.ActionMsg_Cancel"></span>
+                    </button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-link link-set pull-right" ng-click="saveSchedulingNote()" ng-show="isEditSchedulingNote">
+                        <span class="icon-font-blue asap-12">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </span>
+                        <span ng-bind="Language.MessageBox.ActionMsg_Save"></span>
+                    </button>
+                </div>
+               
+                
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive table-fix">
+        <table class="table">
+            <tr class="detail-tr">
+                <td class="col-sm-4 asap-12-b">
+                    <span ng-bind="Language.Label.InspectionSummary_Condition"></span>
+                </td>
+                <td class="col-sm-8"></td>
+            </tr>
+            <tr class="detail-tr">
+                <td class="col-sm-4 asap-12-b">
+                    <span ng-bind="Language.Label.InspectionSummary_Inspector"></span>
+                </td>
+                <td class="col-sm-8 arial-11">
+                    <span ng-bind="inspection.inspectorId"></span>
+                </td>
+            </tr>
+            <tr class="detail-tr">
+                <td class="col-sm-4 asap-12-b">
+                    <span ng-bind="Language.Label.InspectionSummary_SchedulingNote"></span>
+                </td>
+                <td class="col-sm-8 arial-11">
+                    <span ng-bind="inspection.requestComment" ng-show="!isEditSchedulingNote"></span>
+                    <div ng-show="isEditSchedulingNote" class="row">
+                        <div class="col-lg-6">
+                            <textarea ng-model="inspection.requestComment" rows="3" class="form-control summary-requestorcomment" id="schedulingNote"></textarea>
+                        </div>
+                        <div class="col-lg-1">
+                            <img src="../../../Images/ajax-loader-min.gif" ng-show="isEditOver" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr class="detail-tr">
+                <td class="col-sm-4 asap-12-b">
+                    <span ng-bind="Language.Label.InspectionSummary_Fees"></span>
+                </td>
+                <td class="col-sm-8 arial-11">
+                    <span ng-bind="Language.Label.InspectionSummary_BalanceDue"></span>
+                    <span ng-bind="record.balance"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+

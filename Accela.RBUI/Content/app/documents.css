@@ -1,0 +1,40 @@
+﻿.documents-title-margin
+{
+    margin-top:20px;margin-bottom:20px;
+}
+
+.documents-img-margin
+{
+   margin-top:5px;
+}
+
+.p-upload
+{
+  border: dashed 1px #dddddd; height: 94px; width: 134px; padding: 5px;
+}
+.document-thumbnail 
+{
+  line-height: 1.428571429;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.document-a-active
+{
+    color: #03A3F8;
+    font-weight: bold;
+    cursor:pointer
+}
+
+.document-a-disable
+{
+    color: #03A3F8;
+    cursor:pointer;
+}
+
+

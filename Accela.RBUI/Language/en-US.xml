@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LangOption>
+  <MessageBox>
+    <LoginUserMsg_Cn>Login failed</LoginUserMsg_Cn>
+    <ActionMsg_SaveChanges>Save Changes</ActionMsg_SaveChanges>
+    <ActionMsg_Cancel>Cancel</ActionMsg_Cancel>
+    <ActionMsg_Edit>Edit</ActionMsg_Edit>
+    <ActionMsg_Save>Save</ActionMsg_Save>
+  </MessageBox>
+  <Label>
+    <Login>Log in</Login>
+    <Login_Welcome>Welcome!Please log in to get started.</Login_Welcome>
+    <LoginUser>Logged in as</LoginUser>
+    <Logout>Log out</Logout>
+    <Header_Brand>City of Bridgeview</Header_Brand>
+    <Header_Hello>Hello</Header_Hello>
+    <CreateMenu>Create New</CreateMenu>
+    <CreateMenu_Permit>Permit</CreateMenu_Permit>
+    <CreateMenu_Inspection>Inspection</CreateMenu_Inspection>
+    <GlobalSearch_Placeholder>Enter search term...</GlobalSearch_Placeholder>
+    <GlobalSearch_Permits>Permits</GlobalSearch_Permits>
+    <GlobalSearch_Location>Location</GlobalSearch_Location>
+    <GlobalSearch_People>People</GlobalSearch_People>
+    <GlobalSearch_Advanced_Search>Advanced Search</GlobalSearch_Advanced_Search>
+    <Navigation_Dashboard>Dashboard</Navigation_Dashboard>
+    <Navigation_Permits>Permits</Navigation_Permits>
+    <Navigation_Inspections>Inspections</Navigation_Inspections>
+    <Navigation_Payments>Payments</Navigation_Payments>
+    <Navigation_Location>Location</Navigation_Location>
+    <Navigation_People>People</Navigation_People>
+    <Navigation_Documments>Documents</Navigation_Documments>
+    <Navigation_Reports>Reports</Navigation_Reports>
+    <Navigation_GIS>GIS</Navigation_GIS>
+    <Login_Language>Language:</Login_Language>
+    <Login_LoginText>LOGIN WITH CIVIC ID</Login_LoginText>
+    <Login_RegisterText>CREATE NEW CIVIC ID</Login_RegisterText>
+    <Header_Help>Help</Header_Help>
+    <Header_Support>Support</Header_Support>
+    <Footer_Contact>Contact</Footer_Contact>
+    <Footer_Analytics>Analytics</Footer_Analytics>
+    <Footer_Company>Company</Footer_Company>
+    <Footer_More>More</Footer_More>
+    <MyDashboard_MyDashboardText>Dashboard</MyDashboard_MyDashboardText>
+    <MyDashboard_TasksText>Inspections</MyDashboard_TasksText>
+    <MyDashboard_ScheduledText>Scheduled</MyDashboard_ScheduledText>
+    <MyDashboard_RecentlyViewedText>Recently Viewed</MyDashboard_RecentlyViewedText>
+    <MyDashboard_BulletinBoardText>Bulletin Board</MyDashboard_BulletinBoardText>
+    <MyDashboard_CalendarText>Calendar</MyDashboard_CalendarText>   
+    <MyDashboard_SortBy>Sort by:</MyDashboard_SortBy>
+    <MyDashboard_DateText>Date</MyDashboard_DateText>
+    <MyDashboard_PriorityText>Priority</MyDashboard_PriorityText>
+    <MyDashboard_TypeText>Type</MyDashboard_TypeText>
+    <ResultInspection_ResultInsp>Result Insp</ResultInspection_ResultInsp>
+    <ResultInspection_ResultInspection>Result Inspection</ResultInspection_ResultInspection>
+    <ResultInspection_UpdateStatus>Update Status:</ResultInspection_UpdateStatus>
+    <ResultInspection_Comments>Inspection Comments</ResultInspection_Comments>
+    <ResultInspection_CommentsPublic>Make comments public</ResultInspection_CommentsPublic>
+    <ResultInspection_CommentsRequired>Inspection Comments Required!</ResultInspection_CommentsRequired>
+    <ResultInspection_Cancel>Cancel</ResultInspection_Cancel>
+    <ResultInspection_Submit>Submit</ResultInspection_Submit>
+    <Documents>Documents</Documents>
+    <Documents_ViewAs>View as:</Documents_ViewAs>
+    <Documents_List>List</Documents_List>
+    <Documents_Thumbnails>Thumbnails</Documents_Thumbnails>
+    <Documents_Storeinset>Store in set:</Documents_Storeinset>
+    <Documents_UploadTip>Drag and drop a file here, or</Documents_UploadTip>
+    <Documents_Select>Select</Documents_Select>
+    <Documents_ChoosFile>Choose a File</Documents_ChoosFile>
+    <Documents_FromComputer>from your computer</Documents_FromComputer>
+    <Documents_DocumentGroup>Document Group:</Documents_DocumentGroup>
+    <Documents_DocumentType>Document type:</Documents_DocumentType>
+    <Documents_Description>Description:</Documents_Description>
+    <Documents_DescriptionRequired>Description Required!</Documents_DescriptionRequired>
+    <Documents_Cancel>Cancel</Documents_Cancel>
+    <Documents_Upload>Upload</Documents_Upload>
+    <MyDashboard_Summary>Summary</MyDashboard_Summary>
+    <MyDashboard_Condition>Condition:</MyDashboard_Condition>
+    <MyDashboard_Inspector>Inspector:</MyDashboard_Inspector>
+    <MyDashboard_Requestor>Requestor:</MyDashboard_Requestor>
+    <MyDashboard_RequestorPhone>Requestor phone:</MyDashboard_RequestorPhone>
+    <MyDashboard_SchedulingNotes>Scheduling Notes:</MyDashboard_SchedulingNotes>
+    <MyDashboard_Owner>Owner:</MyDashboard_Owner>
+    <MyDashboard_Viewinspection>View Inspection</MyDashboard_Viewinspection>
+    <InspectionSummary_Viewing>Viewing:</InspectionSummary_Viewing>
+    <InspectionSummary_ViewOf>of</InspectionSummary_ViewOf>
+    <InspectionSummary_Actions>Actions</InspectionSummary_Actions>
+    <InspectionSummary_Reassign>Reassign</InspectionSummary_Reassign>
+    <InspectionSummary_Reshedule>Reschedule</InspectionSummary_Reshedule>
+    <InspectionSummary_Cancel>Cancel</InspectionSummary_Cancel>
+    <InspectionSummary_NewInspection>New Inspection</InspectionSummary_NewInspection>
+    <InspectionSummary_Created>Created</InspectionSummary_Created>
+    <InspectionSummary_Type>TYPE</InspectionSummary_Type>
+    <InspectionSummary_Description>DESCRIPTION</InspectionSummary_Description>
+    <InspectionSummary_PermitType>Permit Type:</InspectionSummary_PermitType>
+    <InspectionSummary_Address>ADDRESS</InspectionSummary_Address>
+    <InspectionSummary_InspectionContact>INSPECTION CONTACT</InspectionSummary_InspectionContact>
+    <InspectionSummary_Summary>Summary</InspectionSummary_Summary>
+    <InspectionSummary_Condition>Condition:</InspectionSummary_Condition>
+    <InspectionSummary_Inspector>Inspector:</InspectionSummary_Inspector>
+    <InspectionSummary_SchedulingNote>Scheduling Notes:</InspectionSummary_SchedulingNote>
+    <InspectionSummary_Fees>Fees:</InspectionSummary_Fees>
+    <InspectionSummary_BalanceDue>Balance Due:</InspectionSummary_BalanceDue>
+    <InspectionSummary_ViewRecord>View Record &gt;</InspectionSummary_ViewRecord>
+    <InspectionSummary_ScheduledDateTime>Scheduled Date/Time:</InspectionSummary_ScheduledDateTime>
+    <InspectionSummary_EditContact>Inspection Contact:</InspectionSummary_EditContact>
+    <InspectionSummary_ContactFirstName>First Name</InspectionSummary_ContactFirstName>
+    <InspectionSummary_ContactMidName>Middle Name</InspectionSummary_ContactMidName>
+    <InspectionSummary_ContactLastName>Last Name</InspectionSummary_ContactLastName>
+    <InspectionSummary_ContactPhone>Contact Phone Number:</InspectionSummary_ContactPhone>
+    <RecordDetails_RecordDetails>Record Details</RecordDetails_RecordDetails>
+    <RecordDetails_Condition>Condition</RecordDetails_Condition>
+    <RecordDetails_ApplicationInfo>Application Information</RecordDetails_ApplicationInfo>
+    <RecordDetails_ConditionsApproval>Conditions of Approval</RecordDetails_ConditionsApproval>
+    <RecordDetails_View>View &gt;</RecordDetails_View>
+    <RecordDetails_Fees>Fees</RecordDetails_Fees>
+    <RecordDetails_BalanceDue>Balance due:</RecordDetails_BalanceDue>
+    <FunMenu_Menu>Menu</FunMenu_Menu>
+    <FunMenu_Summary>Summary</FunMenu_Summary>
+    <FunMenu_Checklists>Checklists</FunMenu_Checklists>
+    <FunMenu_Documents>Documents</FunMenu_Documents>
+    <FunMenu_Comments>Comments</FunMenu_Comments>
+    <FunMenu_Conditions>Conditions</FunMenu_Conditions>
+    <FunMenu_RelatedInspections>Related Inspections</FunMenu_RelatedInspections>
+    <FunMenu_RecordDetails>Record Details</FunMenu_RecordDetails>
+    <!-- conditions -->
+    <Conditions_Conditions>Conditions</Conditions_Conditions>
+    <Conditions_Add>Add</Conditions_Add>
+    <Conditions_Delete>Delete</Conditions_Delete>
+    <Conditions_NewCondition>New Condition</Conditions_NewCondition>
+    <Conditions_NewCondition>Edit Condition</Conditions_NewCondition>
+    <Conditions_InsertStandardCondition>Insert Standard Condition</Conditions_InsertStandardCondition>
+    <Conditions_ConditionGroup>Condition Group</Conditions_ConditionGroup>
+    <Conditions_ConditionType>Condition Type</Conditions_ConditionType>
+    <Conditions_ConditionName>Condition Name</Conditions_ConditionName>
+    <Conditions_Status>Status</Conditions_Status>
+    <Conditions_Group>Group</Conditions_Group>
+    <Conditions_Type>Type</Conditions_Type>
+    <Conditions_Severity>Severity</Conditions_Severity>
+    <Conditions_StatusDate>Status Date</Conditions_StatusDate>
+    <Conditions_EffectiveDate>Effective Date</Conditions_EffectiveDate>
+    <Conditions_ExpirationDate>Expiration Date</Conditions_ExpirationDate>
+    <Conditions_Inheritable>Inheritable</Conditions_Inheritable>
+    <Conditions_AppliedbyDept>Applied by Dept</Conditions_AppliedbyDept>
+    <Conditions_AppliedbyUser>Applied by User</Conditions_AppliedbyUser>
+    <Conditions_Current>Current</Conditions_Current>
+    <Conditions_Comments>Comments</Conditions_Comments>
+    <Conditions_InsertStandardComments>Insert Standard Comments</Conditions_InsertStandardComments>
+    <Conditions_makepublic>make public</Conditions_makepublic>
+    <Conditions_Cancel>Cancel</Conditions_Cancel>
+    <Conditions_SaveChanges>Save Changes</Conditions_SaveChanges>
+    <Conditions_select>--select--</Conditions_select>
+    <Conditions_CONDITIONDETAIL>CONDITION DETAIL</Conditions_CONDITIONDETAIL>
+    <Conditions_CONDITIONHISTORY>CONDITION HISTORY</Conditions_CONDITIONHISTORY>
+    <Conditions_edit>Edit</Conditions_edit>
+    <Conditions_Action>Action</Conditions_Action>
+    <Conditions_AppliedDate>Applied Date</Conditions_AppliedDate>
+    <Conditions_Pleaseselectarecordtodelete>Please select a record to delete.</Conditions_Pleaseselectarecordtodelete>
+    <Conditions_recordsdeletedsuccessfully> record(s) deleted successfully.</Conditions_recordsdeletedsuccessfully>
+    <Conditions_Group_Label>Group:</Conditions_Group_Label>
+    <Conditions_Appliedbydept_Label>Applied by dept:</Conditions_Appliedbydept_Label>
+    <Conditions_Type_Label>Type:</Conditions_Type_Label>
+    <Conditions_Appliedbyuser_Label>Applied by user:</Conditions_Appliedbyuser_Label>
+    <Conditions_Name_Label>Name:</Conditions_Name_Label>
+    <Conditions_Status_Label>Status:</Conditions_Status_Label>
+    <Conditions_Comment_Label>Comment:</Conditions_Comment_Label>
+    <Conditions_Severity_Label>Severity:</Conditions_Severity_Label>
+    <Conditions_StatusDate_Label>Status Date:</Conditions_StatusDate_Label>
+    <Conditions_Makecommentpublic_Label>Make comment public:</Conditions_Makecommentpublic_Label>
+    <Conditions_EffectiveDate_Label>Effective Date:</Conditions_EffectiveDate_Label>
+    <Conditions_Expires_Label>Expires:</Conditions_Expires_Label>
+    <Conditions_Inheritable_Label>Inheritable:</Conditions_Inheritable_Label>
+    <!-- checklists -->
+    <Checklists_Checklists>Checklists</Checklists_Checklists>
+    <Checklists_Status_Label>Status:</Checklists_Status_Label>
+    <Checklists_Score_Label>Score:</Checklists_Score_Label>
+    <Checklists_TotalScore_Label>Total Score:</Checklists_TotalScore_Label>
+    <Checklists_SaveChanges>Save Changes</Checklists_SaveChanges>
+    <Checklists_Comments_Label>Comments: </Checklists_Comments_Label>
+    <Checklists_InsertFromStoredComments>Insert From Stored Comments</Checklists_InsertFromStoredComments>
+    <Checklists_AttachFiles>Attach Files...</Checklists_AttachFiles>
+    <Checklists_History>History</Checklists_History>
+    <!-- Create New -->
+    <CreateNew_Current_Permit>Current Permit:</CreateNew_Current_Permit>
+    <CreateNew_Current_Permit_CustomId>Current Permit</CreateNew_Current_Permit_CustomId>
+    <CreateNew_New_Permit>New Permit:</CreateNew_New_Permit>
+    <CreateNew_New_Residential>New Residential</CreateNew_New_Residential>
+    <CreateNew_Permit_Type>Permit Type:</CreateNew_Permit_Type>
+    <CreateNew_Inspection_Type>Inspection Type:</CreateNew_Inspection_Type>
+    <CreateNew_Inspection_Type_select>-- select --</CreateNew_Inspection_Type_select>
+    <CreateNew_Scheduled_Date_Time>Scheduled Date/Time:</CreateNew_Scheduled_Date_Time>
+    <CreateNew_Scheduled_Date>Scheduled Date:</CreateNew_Scheduled_Date>
+    <CreateNew_Scheduled_Time>Scheduled Time:</CreateNew_Scheduled_Time>
+    <CreateNew_Inspector>Inspector:</CreateNew_Inspector>
+    <CreateNew_Scheduling_Notes>Scheduling Notes:</CreateNew_Scheduling_Notes>
+    <CreateNew_Inspection_Contact>Inspection Contact:</CreateNew_Inspection_Contact>
+    <CreateNew_Inspection_Contact_FirstName>First Name</CreateNew_Inspection_Contact_FirstName>
+    <CreateNew_Inspection_Contact_MiddleName>Middle Name</CreateNew_Inspection_Contact_MiddleName>
+    <CreateNew_Inspection_Contact_LastName>Last Name</CreateNew_Inspection_Contact_LastName>
+    <CreateNew_Contact_Phone_Number>Contact Phone Number:</CreateNew_Contact_Phone_Number>
+    <CreateNew_Cancel>Cancel</CreateNew_Cancel>
+    <CreateNew_Save_Inspection>Save Inspection</CreateNew_Save_Inspection>
+    <!-- Comments -->
+    <Comments_Comments>Comments</Comments_Comments>
+    <Comments_Insert_From_Standard_Comments>Insert from Standard Comments</Comments_Insert_From_Standard_Comments>
+    <Comments_Standard_Comments_Groups>Standard Comment Groups</Comments_Standard_Comments_Groups>
+    <Comments_ShowAll>Show All</Comments_ShowAll>
+    <Comments_Search_By_Keyword>Search by keyword</Comments_Search_By_Keyword>
+    <Comments_ClearAll>Clear All</Comments_ClearAll>
+    <Comments_Save_Close>Save &amp; Close</Comments_Save_Close>
+    <Comments_Cancel>Cancel</Comments_Cancel>
+    <!-- Related Inspections -->
+    <Related_Related_Inspections>Related Inspections</Related_Related_Inspections>
+    <Related_Inspection_Type>Inspection Type</Related_Inspection_Type>
+    <Related_Inspector>Inspector</Related_Inspector>
+    <Related_Status>Status</Related_Status>
+    <!-- Intake Form -->
+    <Intake_New_Application>New Application</Intake_New_Application>
+    <Intake_Search_For_Record_Type>Search for record type</Intake_Search_For_Record_Type>
+    <Intake_Choose_From_List>Choose from list</Intake_Choose_From_List>
+    <Intake_My_Favorites>My Favorites</Intake_My_Favorites>
+    <Intake_Saved_Drafts>Saved Drafts</Intake_Saved_Drafts>
+</Label>
+</LangOption>
+

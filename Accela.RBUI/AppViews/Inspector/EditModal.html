@@ -1,0 +1,87 @@
+﻿<div accela-modal="InspectionAction">
+    <form role="form" name="formInspectionAction" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-lg-3 control-label"><span ng-bind="Language.Label.InspectionSummary_ScheduledDateTime"></span></label>
+            <div class="col-lg-4" ng-class="{'has-error':formInspectionAction.scheduleDate.$invalid}">
+                <div class="input-group">
+                    <input type="text" class="form-control calendar-style" datepicker-popup="MM/dd/yyyy" name="scheduleDate" ng-model="inspection.scheduleDate" ng-required="true" />
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div ng-model="inspection.scheduleTime" ng-class="{'has-error':formInspectionAction.scheduleTime.$invalid}" name="scheduleTime" ng-required="true">
+                    <timepicker hour-step="1" minute-step="15" show-meridian="!ismeridian"></timepicker>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-3 control-label"><span ng-bind="Language.Label.InspectionSummary_Inspector"></span></label>
+            <div class="col-lg-4" ng-class="{'has-error':formInspectionAction.Inspector.$invalid}">
+                <div class="input-group dropdown ng-scope">
+                    <input type="text" name="Inspector" class="form-control input-clear" required ng-model="inspection.inspectorId" typeahead="inspector for inspector in inspectors | filter:$viewValue | limitTo:8" placeholder="Inspector" />
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="inspector in inspectors"><a href="javascript:void(0);" ng-click="changeInspector(inspector)">{{inspector}}</a></li>
+                    </ul>
+                    <span class="input-group-addon cursor-pointer dropdown-toggle"><i class="glyphicon glyphicon-search"></i></span>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-3 control-label"><span ng-bind="Language.Label.InspectionSummary_SchedulingNote"></span></label>
+            <div class="col-lg-offset-3 col-lg-8">
+                <textarea class="form-control" rows="3" ng-model="inspection.requestComment"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-3 control-label"><span ng-bind="Language.Label.InspectionSummary_EditContact"></span></label>
+            <div class="col-lg-2">
+                <input type="text" class="form-control" placeholder="{{Language.Label.InspectionSummary_ContactFirstName}}" ng-model="inspection.contact.firstName" />
+            </div>
+            <div class="col-lg-2">
+                <input type="text" class="form-control" placeholder="{{Language.Label.InspectionSummary_ContactMidName}}" ng-model="inspection.contact.midName" />
+            </div>
+            <div class="col-lg-2">
+                <input type="text" class="form-control" placeholder="{{Language.Label.InspectionSummary_ContactLastName}}" ng-model="inspection.contact.lastName" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-3 control-label"><span ng-bind="Language.Label.InspectionSummary_ContactPhone"></span></label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" ng-model="inspection.contact.phoneNumber1" placeholder="0-000-000-0000" />
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="form-group pull-right">
+                <button type="button" class="btn btn-default" ng-click="modalClose('InspectionAction');" data-dismiss="modal"><span ng-bind="Language.MessageBox.ActionMsg_Cancel"></span></button>
+                <button type="button" class="btn btn-primary" ng-click="modalSave('InspectionAction');" ng-disabled="formInspectionAction.$invalid"><span ng-bind="Language.MessageBox.ActionMsg_SaveChanges"></span></button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<!-- /.modal-dialog -->
+<script type="text/javascript" src="/Scripts/Jquery/jquery.placeholder.js"></script>
+<script src="/Scripts/CommonJs/Clear/bootstrap.input-clear.js"></script>
+<script>
+    $(document).ready(function () {
+        //input clear
+        enableInputClearOption();
+    });
+</script>
+<script>
+    //$(document).ready(function () {
+    //    var availableTags = ["Bob Jones", "James", "Kevin.Hu"];
+
+    //    $("#tags").autocomplete({
+    //        source: availableTags
+    //    });
+
+    //});
+</script>

@@ -1,0 +1,688 @@
+﻿@font-face {
+    font-family: 'Asap';
+    src: url('/Fonts/Asap-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Asap Bold';
+    src: url('/Fonts/Asap-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Klinic Slab Book';
+    src: url('/Fonts/klinicslabbook-webfont.eot') format('eot'), url('/Fonts/klinicslabbook-webfont.woff') format('woff'), url('/Fonts/klinicslabbook-webfont.ttf') format('truetype'), url('/Fonts/klinicslabbook-webfont.svg') format('svg');
+}
+
+body {
+    font-family: 'Asap';
+    font-size: 12px;
+}
+
+ul li {
+    list-style: none;
+}
+
+/*******font style*************/
+
+.asap-16-b {
+    font-family: 'Asap Bold';
+    font-size: 1.6em;
+}
+
+.asap-10-b {
+    font-family: 'Asap Bold';
+    font-size: 1em;
+}
+
+.asap-12-b {
+    font-family: 'Asap Bold';
+    font-size: 1.2em;
+}
+
+.asap-12 {
+    font-family: 'Asap';
+    font-size: 1.2em;
+}
+
+.asap-16 {
+    font-family: 'Asap';
+    font-size: 1.6em;
+}
+
+.asap-11 {
+    font-family: 'Asap';
+    font-size: 1.1em;
+}
+
+.asap-11-b {
+    font-family: 'Asap Bold';
+    font-size: 1.1em;
+}
+
+.arial-11 {
+    font-family: Arial;
+    font-size: 1.1em;
+}
+
+.arial-11-b {
+    font-family: Arial;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+/**font style end**/
+
+
+/**common css****/
+
+.boder-noradius {
+    border-radius: 0px;
+}
+
+.body-border {
+    border: solid 2px #d7d7d7;
+}
+
+.container-background {
+    background-color: #fafafa;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+
+.container-fix {
+    background-color: #fafafa;
+    min-height: 720px;
+}
+
+.padding-layout {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-link {
+    color: #3914f6;
+    text-decoration: underline;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+/**common css end****/
+
+/***modal***/
+.modal {
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-header-fix {
+    background-color: #d7d7d7;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.form-control {
+    border: 1px solid #aaa;
+}
+/****modal end*****/
+
+
+
+/***login css*****/
+.login-nav {
+    background-color: #fff;
+}
+
+.login-nav-border {
+    border-bottom-color: rgb(229, 229, 229);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.control-focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.modal-content {
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.5);
+}
+/**login css end****/
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+/*header*/
+#header {
+    padding-bottom: 10px;
+    background-color: #005184;
+}
+
+    #header h1 {
+        background: url("../Content/images/logo.png") no-repeat scroll 0 0 transparent;
+        height: 45px;
+        padding-left: 60px;
+        overflow: hidden;
+        position: relative;
+        width: 260px;
+        margin: 18px 20px;
+        font-size: 1.60714286em;
+        font-family: "Klinic Slab Book";
+    }
+
+    #header .navbar-brand {
+        font-size: 22.5px;
+    }
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    border-radius: 0 !important;
+}
+
+#header .navbar-default {
+    height: 80px;
+    background-color: #fff;
+    border-radius: 0 0px 6px 6px;
+    outline: 0;
+}
+
+#header .btn-search {
+    background-color: #3e3e3e;
+    color: #ffffff;
+    height: 38px;
+}
+
+#header .user-nav {
+    margin: 16px 0;
+}
+
+    #header .user-nav > li {
+        margin: 0 60px;
+    }
+
+        #header .user-nav > li > a {
+            font-family: "Asap Bold";
+            padding: 0;
+            font-size: 16px;
+            line-height: 20px;
+            color: #333333;
+        }
+
+        #header .user-nav > li > span {
+            color: #666666;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+#header .navbar-form {
+    height: 60px;
+    padding-top: 8px;
+    background-color: #f1f1f1;
+}
+
+    #header .navbar-form .search-group {
+        position: relative;
+    }
+
+        #header .navbar-form .search-group .btn-condition {
+            border-color: transparent;
+            cursor: pointer;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+            #header .navbar-form .search-group .btn-condition span {
+                color: #333333;
+                font-size: 16px;
+                font-family: "Asap Bold";
+                margin-right: 10px;
+            }
+
+
+    #header .navbar-form .search-query {
+        height: 38px;
+        width: 273px;
+        font-size: 16px;
+        color: #666666;
+        font-family: "Asap";
+    }
+
+    #header .navbar-form .search-condition {
+        position: absolute;
+        right: 0;
+        top: 2px;
+    }
+
+    #header .navbar-form label {
+        font-size: 14px;
+        color: #3399cc;
+        line-height: 16px;
+        max-width: 60px;
+        font-family: "Asap";
+        padding: 5px;
+    }
+
+#header .glyphicon-chevron-down {
+    top: 3px;
+}
+
+.btn-createnew {
+    font-family: "Asap Bold";
+    font-size: 16px;
+    background-color: #00aeef;
+    background-image: linear-gradient(to top,rgba(0,157,239,.100),rgba(0,134,231,.100));
+    -moz-box-shadow: 0px 0px 1px rgba(255,255,255,.25) inset; /* Old Firefox */
+    box-shadow: 0px 0px 1px rgba(255,255,255,.25) inset;
+    border: 0;
+}
+
+/*header end*/
+
+/*subnavbar*/
+.subnavbar {
+    margin-bottom: 30px;
+}
+
+    .subnavbar .subnavbar-inner {
+        height: 46px;
+        background-color: #005184;
+    }
+
+    .subnavbar .subnav-toggle {
+        display: none;
+        padding: .5em 0;
+        margin: 0 auto;
+        font-size: 18px;
+        text-align: center;
+        color: #ffcc00;
+    }
+     .subnavbar .subnav-toggle .icon{
+         margin:0 10px;
+     }
+
+        .subnavbar .subnav-toggle:hover {
+            text-decoration: none;
+        }
+
+.subnav-collapse.collapse {
+    height: auto\9;
+    overflow: visible\9;
+}
+
+.subnavbar .mainnav {
+    display: inline-block;
+    height: 46px;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+    .subnavbar .mainnav > li {
+        float: left;
+        min-width: 60px;
+        height: 46px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        list-style: none;
+    }
+
+        .subnavbar .mainnav > li:hover,
+        .subnavbar .mainnav > li:active {
+            background: #fff;
+            color: #005184;
+            border-radius: 6px 6px 0 0px;
+        }
+
+            .subnavbar .mainnav > li.active > a,
+            .subnavbar .mainnav > li:active > a,
+            .subnavbar .mainnav > li:hover > a {
+                background: #fff;
+                color: #005184;
+                font-family: "Asap Bold";
+                border-radius: 6px 6px 0 0px;
+                text-decoration: none;
+                font-size: 17.5px;
+            }
+
+        .subnavbar .mainnav > li > a {
+            font-family: "Asap";
+            padding: 15px 15px;
+            display: block;
+            height: 100%;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+.subnavbar .glyphicon-chevron-down {
+    top: 3px;
+    padding-left: 10px;
+}
+/*subnavbar end*/
+
+/*main*/
+.main {
+    padding-bottom: 2em;
+}
+
+.widget {
+    position: relative;
+    clear: both;
+    width: auto;
+    margin-bottom: 2em;
+}
+
+    .widget .widget-header {
+        position: relative;
+        height: 45px;
+        line-height: 45px;
+        background: url('../Content/Images/widget-bar-bg.gif') #464646;
+        color: white;
+    }
+
+        .widget .widget-header .buttons {
+            float: right;
+            padding: 0px 15px;
+        }
+
+        .widget .widget-header .line {
+            float: right;
+            border-left: 1px solid #414141;
+            line-height: 35px;
+            margin: 5px 0;
+        }
+
+        .widget .widget-header .buttons .link {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+            .widget .widget-header .buttons .link a {
+                color: white;
+                font-family: "Asap";
+            }
+
+                .widget .widget-header .buttons .link a:hover,
+                .widget .widget-header .buttons .link a:active,
+                .widget .widget-header .buttons .link .active {
+                    color: #ffcc00;
+                    font-family: "Asap Bold";
+                    text-decoration:underline;
+                }
+
+            .widget .widget-header .buttons .link:hover,
+            .widget .widget-header .buttons .link:active {
+            }
+
+        .widget .widget-header .buttons .icon {
+            display: inline-block;
+            padding: 6px 2px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.428571429em;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+            .widget .widget-header .buttons .icon i {
+                color: white;
+                width: 24px;
+                height: 24px;
+                background: #333333;
+                line-height: 22px;
+                text-align: center;
+            }
+
+                .widget .widget-header .buttons .icon i.circle {
+                    color: white;
+                    width: 24px;
+                    height: 24px;
+                    background: #333333;
+                    -moz-border-radius: 12px;
+                    -webkit-border-radius: 12px;
+                    border-radius: 12px;
+                    line-height: 22px;
+                    text-align: center;
+                }
+
+
+                .widget .widget-header .buttons .icon i:hover,
+                .widget .widget-header .buttons .icon i:active,
+                .widget .widget-header .buttons .icon i.active {
+                    color: #333333;
+                    width: 24px;
+                    height: 24px;
+                    background: #ffcc00;
+                    line-height: 22px;
+                    text-align: center;
+                }
+
+        .widget .widget-header .label, .widget .widget-header .badge {
+            padding: 3px 5px 2px;
+            float: right;
+            margin: 9px 15px 0 0;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3) inset, 0 1px 0 #ffffff;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3) inset, 0 1px 0 #ffffff;
+        }
+
+        .widget .widget-header h3 {
+            position: relative;
+            left: 25px;
+            display: inline-block;
+            font-size: 24px;
+            line-height: 45px;
+            font-family: "Klinic Slab Book";
+            margin-bottom: 0;
+        }
+
+        .widget .widget-header h4 {
+            position: relative;
+            left: 25px;
+            display: inline-block;
+            font-size: 20px;
+            line-height: 45px;
+            margin-right: 3em;
+            font-family: "Klinic Slab Book";
+            margin-bottom: 0;
+        }
+
+        .widget .widget-header h3 span.num {
+            color: #ffcc00;
+        }
+
+    .widget .widget-content {
+        padding: 25px 15px 15px;
+        background: #f1f1f1;
+    }
+
+.item-row {
+    display: table;
+    width: 100%;
+    padding-bottom: 3.5em;
+    margin-bottom: 3.5em;
+}
+
+    .item-row .item-label {
+        display: table-cell;
+        vertical-align: top;
+        width: 200px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .item-row .item-content {
+        display: table-cell;
+    }
+
+/*tabs*/
+article.single section footer {
+    display: none;
+}
+
+.col-custom-middle {
+    text-align: center;
+    padding-top: 7px;
+    margin-bottom: 0;
+    margin-top: 0;
+    display: block;
+}
+
+article.single {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*tabs end*/
+
+/*main end*/
+
+/*footer*/
+.bs-footer {
+    text-align: center;
+    color: rgb(119, 119, 119);
+    width: 52%;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    border-top-color: rgb(229, 229, 229);
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.footer-links {
+    margin: 10px 0px;
+    padding-left: 0px;
+}
+
+    .footer-links li {
+        padding: 0px 2px;
+        display: inline;
+    }
+
+        .footer-links li a {
+            color: #000;
+        }
+
+            .footer-links li a:hover {
+                color: #3914f6;
+                text-decoration: none;
+            }
+
+        .footer-links li:first-child {
+            padding-left: 0px;
+        }
+
+.bs-footer {
+    text-align: center;
+}
+
+    .bs-footer p {
+        margin-bottom: 0px;
+    }
+
+/*footer end*/
+
+/*modal*/
+.modal-content {
+    background-color: transparent;
+}
+
+.modal-header {
+    background-color: #005184;
+    border-radius: 6px 6px 0px 0px;
+    color: #fff;
+    padding: 11px 15px;
+}
+
+    .modal-header .close {
+        color: #fff;
+        opacity: 1;
+    }
+/*modal end*/
+
+/*upload button*/
+.fileupload-btn {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.modal-body {
+    padding-bottom: 15px;
+    background-color: #fff;
+    border-radius: 0 0 6px 6px;
+}
+
+.modal-footer {
+    padding: 15px 20px 0px;
+}
+/*modal end*/
+
+/*permit*/
+#save-drafts .drafts {
+    border: 1px solid #ccc;
+}
+
+    #save-drafts .drafts dd {
+        padding: 1.5em 0 0;
+    }
+/*permit end*/
+
+.rotate {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    /* filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1.5); */
+    -ms-transform: rotate(180deg);
+}
+
+.fileupload-btn .nopadding {
+    padding: 0px !important;
+}
+
+.fileupload-btn input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 40px;
+    direction: ltr;
+    cursor: pointer;
+}

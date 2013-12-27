@@ -1,0 +1,91 @@
+﻿<form role="form" name="formApplicantAddress" class="form-horizontal formApplicant">
+    <div class="form-group">
+        <label class="col-sm-4 control-label"><span class="pull-left">Address Type</span></label>
+        <label class="col-sm-2 control-label"><span class="pull-left">Status</span></label>
+        <label class="col-sm-3 control-label"><span class="pull-left">Start Date</span></label>
+        <label class="col-sm-3 control-label"><span class="pull-left">End Date</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-4">
+            <select class="form-control">
+                <option>Mailing</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <select class="form-control">
+                <option>Select</option>
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="text" class="form-control calendar-style" datepicker-popup="MM/dd/yyyy" name="StartDate" ng-model="StartDate" />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="text" class="form-control calendar-style" datepicker-popup="MM/dd/yyyy" name="EndDate" ng-model="EndDate" />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label"><span class="pull-left">Address LIne 1</span></label>
+        <label class="col-sm-4 control-label"><span class="pull-left">Address LIne 2</span></label>
+        <label class="col-sm-4 control-label"><span class="pull-left">LAddress LIne 3</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-4">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label"><span class="pull-left">City</span></label>
+        <label class="col-sm-2 control-label"><span class="pull-left">State</span></label>
+        <label class="col-sm-3 control-label"><span class="pull-left">Zip Code</span></label>
+        <label class="col-sm-3 control-label"><span class="pull-left">Country/ Region</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-4">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-3">
+            <select class="form-control">
+                <option>Select</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label"><span class="pull-left">Recipient</span></label>
+        <label class="col-sm-4 control-label"><span class="pull-left">Phone</span></label>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-4">
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="modal-footer">
+        <div class="form-group pull-right">
+            <button type="button" class="btn btn-default" ng-click="" data-dismiss="modal"><span ng-bind="Language.MessageBox.ActionMsg_Cancel"></span></button>
+            <button type="button" class="btn btn-primary" ng-click="" ng-disabled="formApplicant.$invalid"><span ng-bind="Language.MessageBox.ActionMsg_SaveChanges"></span></button>
+        </div>
+    </div>
+
+</form>

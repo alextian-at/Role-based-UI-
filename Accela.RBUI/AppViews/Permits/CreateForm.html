@@ -1,0 +1,162 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="widget">
+            <div class="widget-header">
+                <h3>New Application</h3>
+            </div>
+            <div class="widget-content">
+                <form id="createForm" role="form" action="#/SubmissionComplete">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>NEW: Grading</label>&nbsp;&nbsp;&nbsp;<a href="javascript:;" id="btn-toggle" ng-click="ChangePageStyle();">{{PageStyleText}}</a>
+                            <p>Opened Date: 8/12/2013</p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button class="btn btn-link">Discard</button>
+                            <button class="btn btn-default">Save</button>
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <label class="control-label">Project Name</label>
+                            <input class="form-control" type="text" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label">Description</label>
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <article class="single" ng-class="{tabs:isTabsStyle}" id="permitForm">
+        <div ng-include="'/appviews/permits/createform_apo.html'">
+
+        </div>
+        <div ng-controller="ProfessionalsController">
+            <div accela-modal="AdvancedProfessionalSearch">
+                <div ng-include="'/AppViews/Permits/ProfessionalSearch.html'"></div>
+            </div>
+            <div accela-modal="CreateProfessional">
+                <div ng-include="'/AppViews/Permits/CreateProfessional.html'"></div>
+            </div>
+            <section ng-class="{target:SectionIndex==1}">
+                <header ng-click="SelectedTab(1);" ng-style="{top:(1*65)+'px'}">
+                    <h3><a href="javascript:;">Professionals</a></h3>
+                </header>
+                <div class="content">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3>Professionals</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div ng-include="'/AppViews/Permits/Professionals.html'"></div>
+                        </div>
+                    </div>
+                    <div ng-include="'CreateFormFooterTempate'"></div>        
+                </div>
+            </section>
+        </div>
+        <div ng-controller="ApplicantController">
+            <div accela-modal="CreateApplicant">
+                <div ng-include="'/AppViews/Permits/CreateApplicant.html'"></div>
+            </div>
+            <div accela-modal="CreateApplicantAddress">
+                <div ng-include="'/AppViews/Permits/ApplicantAddress.html'"></div>
+            </div>
+            <section ng-class="{target:SectionIndex==2}">
+                <header ng-click="SelectedTab(2);" ng-style="{top:(2*65)+'px'}">
+                    <h3><a href="javascript:;">Applicant</a></h3>
+                </header>
+                <div class="content">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3>Applicant</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div ng-include="'/AppViews/Permits/Applicant.html'"></div>
+                        </div>
+                    </div>
+                    <div ng-include="'CreateFormFooterTempate'"></div>        
+                </div>
+            </section>
+        </div>
+        <div ng-controller="BusinessOwnerController">
+            <div accela-modal="CreateBusinessOwner">
+                <div ng-include="'/AppViews/Permits/CreateApplicant.html'"></div>
+            </div>
+            <div accela-modal="CreateBusinessOwnerAddress">
+                <div ng-include="'/AppViews/Permits/ApplicantAddress.html'"></div>
+            </div>
+            <section ng-class="{target:SectionIndex==3}">
+                <header ng-click="SelectedTab(3);" ng-style="{top:(3*65)+'px'}">
+                    <h3><a href="javascript:;">Business Owner</a></h3>
+                </header>
+                <div class="content">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h3>Business Owner</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div ng-include="'/AppViews/Permits/Applicant.html'"></div>
+                        </div>
+                    </div>
+                    <div ng-include="'CreateFormFooterTempate'"></div>        
+                </div>
+            </section>
+        </div>
+        <section ng-class="{target:SectionIndex==4}">
+            <header ng-click="SelectedTab(4);" ng-style="{top:(4*65)+'px'}">
+                <h3><a href="javascript:;">Grading Information</a></h3>
+            </header>
+            <div class="content">
+                <div class="widget">
+                    <div class="widget-header">
+                        <h3>Grading Information</h3>
+                    </div>
+                    <div class="widget-content">
+                        <div ng-include="'/AppViews/Permits/CreateForm_ASI.html'"></div>
+                    </div>
+                </div>
+                <div ng-include="'CreateFormFooterTempate'"></div>        
+            </div>
+        </section>
+        <section ng-class="{target:SectionIndex==5}">
+            <header ng-click="SelectedTab(5);" ng-style="{top:(5*65)+'px'}">
+                <h3><a href="javascript:;">Permit Dates</a></h3>
+            </header>
+            <div class="content">
+                <div class="widget">
+                    <div class="widget-header">
+                        <h3>Permit Dates</h3>
+                    </div>
+                    <div class="widget-content">
+                        <div ng-include="'/AppViews/Permits/CreateForm_ASIT.html'"></div>
+                    </div>
+                </div>
+                <div ng-include="'CreateFormFooterTempate'"></div>        
+            </div>
+        </section>
+    </article>
+
+</div>
+
+<script type="text/ng-template" id="CreateFormFooterTempate">
+    <footer>
+        <div class="row">
+            <div class="col-xs-6 text-left"><a class="btn btn-link" ng-show="SectionIndex>0" ng-click="SelectedTab(SectionIndex-1);">Previous: {{PreviousText}}</a></div>
+            <div class="col-xs-6 text-right">
+                <a class="btn btn-link" ng-show="SectionIndex<SectionCount-1" ng-click="SelectedTab(SectionIndex+1);">Next: {{NextText}}</a>
+                <a class="btn btn-link" ng-show="SectionIndex==SectionCount-1">Save</a>
+                <a class="btn btn-link" ng-show="SectionIndex==SectionCount-1">Submit</a>
+            </div>
+        </div>     
+    </footer>
+</script>

@@ -1,0 +1,61 @@
+﻿<style type="text/css">
+    #canvas {
+        border: 1px solid #ccc;
+    }
+</style>
+<div accela-modal="ResultInspection" ng-controller="ResultInspectionController">
+    <form role="form" name="formResult">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4 text-left" ng-class="{'has-error':formResult.inspectionstatus.$invalid}">
+                    <span class="control-label"><span  title="{{Language.Label.ResultInspection_UpdateStatus}}" ng-bind="Language.Label.ResultInspection_UpdateStatus"></span></span>
+                    <select name="inspectionstatus" class="form-control" ng-model="resultinspection.inspectionstatus.value" ng-required="true"
+                        ng-options="obj.result.value as obj.result.text for obj in UpdateStatusRecord">
+                            <option value="" ng-bind="Language.Label.Documents_Select"></option>
+                    </select>
+                </div>
+                <div class="col-md-8"></div>
+            </div>
+
+        </div>
+         <div class="form-group"  ng-show="true">
+            <label>Inspector's Signature</label>
+             <div  id="InspectorSignatureDiv"></div>
+        </div>
+        <div class="form-group"  ng-show="true">
+                <label>Contractor's Signature</label>
+                <div id="ContractorSignatureDiv"></div>
+            </div>
+        <div class="form-group" ng-class="{'has-error':formResult.inspectioncomments.$invalid}">
+            <div class="row">
+                <div class="col-md-6">
+                    <span class="control-label"><span  title="{{Language.Label.ResultInspection_Comments}}" ng-bind="Language.Label.ResultInspection_Comments"></span></span>
+                </div>
+                <div class="col-md-6">
+                   <!-- <input name="MakePublic" id="MakePublic" ng-model="resultinspection.MakePublic.value" type="checkbox" />
+                    <span  title="{{Language.Label.ResultInspection_CommentsPublic}}" ng-bind="Language.Label.ResultInspection_CommentsPublic"></span>-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea class="form-control" ng-model="resultinspection.inspectioncomments.value" placeholder="Inspection Comments" name="inspectioncomments" ng-required="true" rows="3"></textarea>
+                    <div class="alert alert-danger" id="DivErrorInspectionComments" title="Language.Label.ResultInspection_CommentsRequired" ng-show="formResult.textareaInspectionComments.$dirty && formResult.textareaInspectionComments.$invalid"><span ng-bind="Language.Label.ResultInspection_CommentsRequired"></span></div>
+                </div>
+            </div>
+        </div>
+        <div style="display:none;">
+            <input id="InspectorSignature" ng-model="resultinspection.InspectorSignature.value" type="text" />
+            <input id="ContractorSignature" ng-model="resultinspection.ContractorSignature.value" type="text" />
+        </div>
+    </form>
+    <div class="modal-footer">
+        <div ng-show="false"><input type="button" id="canvasClear" /></div>
+        <div class="form-group pull-right">
+            <button type="button" class="btn btn-default" ng-click="closedialog();" title="{{Language.Label.ResultInspection_Cancel}}" data-dismiss="modal"><span ng-bind="Language.Label.ResultInspection_Cancel"></span></button>
+            <button type="button" id="btnSubmit" class="btn btn-primary" ng-click="submit();" title="{{ResultInspection_Submit}}" ng-disabled="formResult.$invalid"><span ng-bind="Language.Label.ResultInspection_Submit"></span></button>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+<script type="text/javascript" src="/Scripts/Jquery/jquery.placeholder.js"></script>

@@ -1,0 +1,35 @@
+﻿<link rel="stylesheet" type="text/css" href="/Content/app/documents.css" />
+<div class="row summary-detail">
+    <div class="row" ng-controller="InspectionDocumentController">
+        <div class="col-md-12">
+               <div class="summary-hearder-div">
+            <div class="row">
+                <div class="col-md-12"><span title="{{Language.Label.Documents}}" ng-bind="Language.Label.Documents"></span></div>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span title="{{Language.Label.Documents_ViewAs}}" ng-bind="Language.Label.Documents_ViewAs"></span><a class="cursor-pointer" id="aList" ng-click="SetClass('aList,aThumb');menuClick('DocumentTableList')"><span title="{{Language.Label.Documents_List}}" ng-bind="Language.Label.Documents_List"></span></a>| <a class="document-a-active" id="aThumb" ng-click="SetClass('aThumb,aList');menuClick('DocumentThumbList')"><span title="{{Language.Label.Documents_Thumbnails}}" ng-bind="Language.Label.Documents_Thumbnails"></span></a>
+                        </div>
+                        <div class="col-md-6">
+                            <span title="{{Language.Label.Documents_Storeinset}}" ng-bind="Language.Label.Documents_Storeinset"></span>
+                            <select name="Store" ng-model="resultinspection.Store.value" required>
+                                <option value="" ng-bind="Language.Label.Documents_Select"></option>
+                                <option ng-repeat="item in Storeinset  | unique:'category'" value="{{item.category.value}}">{{item.category.value}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div ng-include src="submenuUrl"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

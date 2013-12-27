@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Permits Solution";
+}
+<!DOCTYPE html>
+
+
+<html xmlns:ng="http://angularjs.org" @{ if (Session["CurrentLang"] != null && Session["CurrentLang"].ToString() == "ar") { @Html.Raw(" dir = \"rtl\" lang = \"ar\"")   } else { @Html.Raw(" dir=\"ltr\" lang=\"en\" ")   } }
+      ng-app="RBUIApp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.5" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @{
+        if (Session["CurrentLang"] != null && Session["CurrentLang"].ToString() == "ar")
+        {
+            @Styles.Render("~/Content/bootstrap-rtl")
+            @Scripts.Render("~/bundles/bootstrap-rtl")
+        }
+        else
+        {
+            @Styles.Render("~/Content/bootstrap-ltr")
+            @Scripts.Render("~/bundles/bootstrap-ltr")
+        }
+
+    }
+    @Styles.Render("~/Content/css")
+
+    @{
+        if (Session["CurrentLang"] != null && Session["CurrentLang"].ToString() == "ar")
+        {
+            @Styles.Render("~/Content/site-rtl");
+        }
+    }
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
+    @if (Session["CurrentLang"] != null)
+    {
+        <script type="text/javascript" src="@Scripts.Url("~/Scripts/i18n/angular-locale_" + Session["CurrentLang"].ToString() + ".js")"></script>
+    }
+    <script type="text/javascript" src="~/Scripts/Jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/SystemJs/rbui.interface.js"></script>
+    <script type="text/javascript" src="~/Scripts/SystemJs/collapse.js"></script>
+
+    @Scripts.Render("~/bundles/appscript")@* App Script  *@
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/map/esri.css" />
+</head>
+<body ng-controller="GetResourceCtrl">
+
+    @Html.Partial("Header")
+
+    @RenderBody()
+    <!-- /page -->
+    @Html.Partial("Footer")
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+

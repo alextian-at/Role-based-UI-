@@ -1,0 +1,49 @@
+﻿<div class="col-lg-12 panel panel-default boder-noradius mydashboard-summaryDiv">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="summary-hearder-div  summary-hearder-margin">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3><span title="{{Language.Label.MyDashboard_Summary}}" ng-bind="Language.Label.MyDashboard_Summary"></span></h3>
+                    </div>
+                    <div class="col-lg-6 text-right summary-viewinspection">
+                        <a title="{{Language.Label.MyDashboard_Viewinspection}}" class="cursor-pointer" onclick="window.location.href = '/#/InspectionSummary/{{inspection.type.group}}/{{inspection.id}}'">{{Language.Label.MyDashboard_Viewinspection}}</a>
+                    </div>
+                </div>
+            </div>
+            <table class="table arial-11">
+                <tbody>
+                    <tr>
+                        <td><span title="{{Language.Label.MyDashboard_Condition}}" ng-bind="Language.Label.MyDashboard_Condition"></span>LOCK [API Data]</td>
+                        <td>Stop Work Order placed 8/12/2013</td>
+                    </tr>
+                    <tr>
+                        <td><span title="{{Language.Label.MyDashboard_Inspector}}" ng-bind="Language.Label.MyDashboard_Inspector"></span></td>
+                        <td>{{inspection.inspectorId}}</td>
+                    </tr>
+                    <tr>
+                        <td><span title="{{Language.Label.MyDashboard_Requestor}}" ng-bind="Language.Label.MyDashboard_Requestor"></span></td>
+                        <td>{{inspection.requestorFirstName}}  {{inspection.requestorMiddleName}}  {{inspection.requestorLastName}}</td>
+                    </tr>
+                    <tr>
+                        <td><span title="{{Language.Label.MyDashboard_RequestorPhone}}" ng-bind="Language.Label.MyDashboard_RequestorPhone"></span></td>
+                        <td>{{inspection.requestorPhoneNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td><span title="{{Language.Label.MyDashboard_SchedulingNotes}}" ng-bind="Language.Label.MyDashboard_SchedulingNotes"></span></td>
+                        <td>{{inspection.requestComment}}</td>
+                    </tr>
+                    <tr>
+                        <td><span title="{{Language.Label.MyDashboard_Owner}}" ng-bind="Language.Label.MyDashboard_Owner"></span></td>
+                        <td>{{record.fullName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+    </div>
+
+
+</div>

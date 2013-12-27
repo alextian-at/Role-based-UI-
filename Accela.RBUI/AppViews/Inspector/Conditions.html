@@ -1,0 +1,130 @@
+﻿<!--<link rel="stylesheet" type="text/css" href="/Content/app/conditions.css" />-->
+<div class="row summary-detail" ng-controller="ConditionController">
+    <div class="summary-hearder-div" style="border-bottom: 6px solid #005284;">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="asap-16-b header-title" ng-bind="Language.Label.Conditions_Conditions"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <button type="button" class="btn btn-default" ng-click="showCreateConditionWindow();OpenDialog('New Condition', 'New Condition', 'EditCondition-dialog', 800);">{{Language.Label.Conditions_Add}}</button>
+            <button type="button" class="btn btn-default" ng-click="ConditionDelete();">{{Language.Label.Conditions_Delete}}</button>
+        </div>
+        <div class="col-md-9">
+        </div>
+    </div>
+    <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
+    <div class="row ">
+        <div class="col-md-12">
+            <div ng-grid></div>
+        </div>
+    </div>
+    <div class="row condition-detatil-margin" ng-show="conditionHasSelected" ng-animate="{show: 'fadeIn', hide:'fadeOut'}">
+        <div class="col-md-12">
+            <h5 class="h-border">{{Language.Label.Conditions_CONDITIONDETAIL}} <a class="cursor-pointer" ng-click="showEditConditionWindow();OpenDialog('Edit Condition', 'Edit Condition', 'EditCondition-dialog', 800);">{{Language.Label.Conditions_edit}}</a></h5>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">{{Language.Label.Conditions_Group_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.group.text}}</div>
+                <div class="col-md-2">{{Language.Label.Conditions_Appliedbydept_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.appliedbyDepartment.text}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">{{Language.Label.Conditions_Type_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.type.text}}</div>
+                <div class="col-md-2">{{Language.Label.Conditions_Appliedbyuser_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.appliedbyUser.text}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">{{Language.Label.Conditions_Name_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.name}}</div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">{{Language.Label.Conditions_Status_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.status.text}}</div>
+                <div class="col-md-2">{{Language.Label.Conditions_Comment_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.longComments}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">{{Language.Label.Conditions_Severity_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.severity.text}}</div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">{{Language.Label.Conditions_StatusDate_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.statusDate| date:'MM/dd/yyyy hh:mma'}}</div>
+                <div class="col-md-2">{{Language.Label.Conditions_Makecommentpublic_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.displayNoticeInCitizens}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">{{Language.Label.Conditions_EffectiveDate_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.effectiveDate | date:'MM/dd/yyyy hh:mma'}}</div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">[API Data]{{Language.Label.Conditions_Expires_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.expiresDate}}</div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">{{Language.Label.Conditions_Inheritable_Label}}</div>
+                <div class="col-md-4">{{CurrentCondition.inheritable.value}}</div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row condition-detatil-margin" ng-show="conditionHasSelected">
+        <div class="col-md-12">
+            <h5 class="h-border">{{Language.Label.Conditions_CONDITIONHISTORY}}</h5>
+            <table class="table table-bordered table-margin text-center">
+                <tr class="active">
+                    <td>{{Language.Label.Conditions_Action}}</td>
+                    <td>{{Language.Label.Conditions_Group}}</td>
+                    <td>{{Language.Label.Conditions_Type}}</td>
+                    <td>{{Language.Label.Conditions_ConditionName}}</td>
+                    <td>{{Language.Label.Conditions_Status}}</td>
+                    <td>{{Language.Label.Conditions_Severity}}</td>
+                    <td>{{Language.Label.Conditions_AppliedDate}}</td>
+                </tr>
+                <tr>
+                    <td>Edit</td>
+                    <td>Permits</td>
+                    <td>Building Permits</td>
+                    <td>Design review required</td>
+                    <td>Initiated</td>
+                    <td>Notice</td>
+                    <td>08/12/2013</td>
+                </tr>
+                <tr>
+                    <td>Add</td>
+                    <td>Permits</td>
+                    <td>Building Permits</td>
+                    <td>Design review required</td>
+                    <td>Initiated</td>
+                    <td>Notice</td>
+                    <td>08/12/2013</td>
+                </tr>
+                <tr>
+                    <td>Edit</td>
+                    <td>Permits</td>
+                    <td>Building Permits</td>
+                    <td>Design review required</td>
+                    <td>Initiated</td>
+                    <td>Notice</td>
+                    <td>08/12/2013</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div ng-include src="'/AppViews/Inspector/EditCondition.html'"></div>
+    <div ng-include src="'/AppViews/Inspector/StandardComment.html'"></div>
+</div>

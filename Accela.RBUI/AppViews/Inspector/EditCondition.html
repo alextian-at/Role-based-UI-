@@ -1,0 +1,165 @@
+﻿<div accela-modal="EditCondition">
+    <form role="form" name="formCondition">
+        <div class="form-group row">
+            <div class="col-md-12 text-left">
+                <a href="javascript:void(0);" ng-click="OpenStandardConditionModal();">{{Language.Label.Conditions_InsertStandardCondition}}</a>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4" ng-class="{'has-error':formCondition.group.$invalid}">
+                <sapn class="control-label">
+                {{Language.Label.Conditions_ConditionGroup}}
+            </sapn>
+                <select class="form-control" ng-model="EditCondition.group" name="group" required ng-change="GroupChange();"
+                    ng-options="obj.text for obj in select.groups">
+                    <option value="">{{Language.Label.Conditions_select}}</option>
+                </select>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error':formCondition.type.$invalid}">
+                <span class="control-label">{{Language.Label.Conditions_ConditionType}}
+                </span>
+                <select class="form-control" ng-model="EditCondition.type" name="type" required
+                    ng-options="obj.text for obj in select.types">
+                    <option value="">{{Language.Label.Conditions_select}}</option>
+                </select>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error':formCondition.ConditionName.$invalid}">
+                <span class="control-label">{{Language.Label.Conditions_ConditionName}}
+                </span>
+                <input type="text" class="form-control" ng-model="EditCondition.name" name="ConditionName" required />
+                <div class="invalid" ng-show="formCondition.ConditionName.$dirty&&formCondition.ConditionName.$error.required">Condition Name is required!</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4" ng-class="{'has-error':formCondition.Status.$invalid}">
+                <span class="control-label">{{Language.Label.Conditions_Status}}
+                </span>
+                <select class="form-control" ng-model="EditCondition.status" name="Status" ng-change="StatusChange()"
+                    ng-options="obj.text for obj in select.statuses">
+                    <option value="">{{Language.Label.Conditions_select}}</option>
+                </select>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error':formCondition.Severity.$invalid}">
+                <span class="control-label">{{Language.Label.Conditions_Severity}}</span>
+                <select class="form-control" ng-model="EditCondition.severity" name="Severity"
+                    ng-options="obj.text for obj in select.severitys">
+                    <option value="">{{Language.Label.Conditions_select}}</option>
+                </select>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error':formCondition.StatusDate.$invalid}">
+                <div class="control-label">
+                    {{Language.Label.Conditions_StatusDate}}
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control calendar-style" datepicker-popup="MM/dd/yyyy" name="StatusDate" ng-model="EditCondition.statusDate" />
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4" ng-class="{'has-error':formCondition.EffectiveDate.$invalid}">
+                <span class="control-label">{{Language.Label.Conditions_EffectiveDate}}
+                </span>
+                <div class="input-group">
+                    <input type="text" class="form-control calendar-style" datepicker-popup="MM/dd/yyyy" name="EffectiveDate" max="EditCondition.expiredDate" ng-model="EditCondition.effectiveDate" />
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error':formCondition.ExpirationDate.$invalid}">
+                <span class="control-label">{{Language.Label.Conditions_ExpirationDate}}
+                </span>
+                <div class="input-group">
+                    <input type="text" class="form-control calendar-style" datepicker-popup="MM/dd/yyyy" name="ExpirationDate" min="EditCondition.effectiveDate" ng-model="EditCondition.expiredDate" />
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="control-label">
+                    {{Language.Label.Conditions_Inheritable}}
+                </div>
+                <input type="radio" name="Inheritable" ng-model="EditCondition.inheritable.value" value="Y" />Yes
+                <input type="radio" name="Inheritable" ng-model="EditCondition.inheritable.value" value="N" />No
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4" ng-class="{'has-error':formCondition.appliedbyDepartment.$invalid}">
+                <div class="control-label">
+                    {{Language.Label.Conditions_AppliedbyDept }}   <a class="current" ng-click="CurrentDeptAndUser()" href="javascript:void(0);">{{Language.Label.Conditions_Current}}</a>
+                </div>
+                <select class="form-control " name="appliedbyDepartment" ng-change="AppliedDeptChange(EditCondition.appliedbyDepartment);"
+                    ng-model="EditCondition.appliedbyDepartment"
+                    ng-options=" obj.text for obj in select.depts" required>
+                    <option value="">{{Language.Label.Conditions_select}}</option>
+                </select>
+            </div>
+            <div class="col-md-4" ng-class="{'has-error':formCondition.appliedbyUser.$invalid}">
+                <div class="control-label">
+                    {{Language.Label.Conditions_AppliedbyUser}} <a class="current" ng-click="CurrentDeptAndUser()" href="javascript:void(0);">{{Language.Label.Conditions_Current}}</a>
+                </div>
+                <select class="form-control " ng-model="EditCondition.appliedbyUser" name="appliedbyUser" required ng-options=" obj.text for obj in select.users">
+                    <option value="">{{Language.Label.Conditions_select}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="control-label col-md-4">
+                        {{Language.Label.Conditions_Comments}}
+                    </div>
+                    <div class="col-md-7 text-right">
+                        <a ng-click="OpenStandardCommentsModal()">{{Language.Label.Conditions_InsertStandardComments}}</a>
+                    </div>
+                </div>
+                <textarea class="form-control" name="LongComments" ng-model="EditCondition.longComments" rows="3"></textarea>
+                <span>
+                    <input type="checkbox" ng-model="EditCondition.displayNoticeInCitizens" />{{Language.Label.Conditions_makepublic}}</span>
+            </div>
+        </div>
+        <div class="row last-row">
+            <div class="form-group pull-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{Language.Label.Conditions_Cancel}}</button>
+                <button type="button" class="btn btn-primary" ng-click="ConditionSave();" ng-disabled="formCondition.$invalid">{{Language.Label.Conditions_SaveChanges}}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Instandard condition -->
+<div ng-controller="StandardConditionController">
+    <div accela-modal="StandardConditionModal">
+        <div class="panel">
+            <div class="row">
+                <div class="form-group col-sm-3">
+                    <label class="label-control">Condition Group</label>
+                    <select class="form-control" ng-options="obj.text for obj in standardselect.groups" ng-model="StandardGroup">
+                        <option value="">{{Language.Label.Conditions_select}}</option>
+                    </select>
+                </div>
+                <div class="form-group  col-sm-3">
+                    <label class="label-control">Condition Type</label>
+                    <select class="form-control" ng-options="obj.text for obj in standardselect.types" ng-model="StandardType">
+                        <option value="">{{Language.Label.Conditions_select}}</option>
+                    </select>
+                </div>
+                <div class="form-group  col-sm-4">
+                    <label class="label-control">Condition Name</label>
+                    <input type="text" class="form-control" ng-model="StandardName" />
+                </div>
+                 <div class="form-group col-sm-2">
+                     <label class="label-control">&nbsp;</label>
+                   <button class=" btn btn-default form-control" ng-click="StandardSearch();">Go</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" ng-grid></div>
+            </div>            
+            <div class="row">
+                <div class="col-sm-3 pull-right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{Language.Label.Conditions_Cancel}}</button>
+                <button type="button" class="btn btn-primary" ng-click="InsertStandardCondition();" ng-disabled="true">Insert</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
